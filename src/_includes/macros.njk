@@ -1,0 +1,20 @@
+{%macro nav(current)%}
+<ul>
+	<li><a href="/resume.pdf">Resume</a></li>
+	<li><a {% if current == '/about/' %} aria-current="page"{% endif %}href="/about">About</a></li>
+	<li><a {% if current == '/blog/' %} aria-current="page"{% endif %}href="/blog">Blog</a></li>
+</ul>
+{%endmacro%}
+
+{%macro cdback(type, element)%}
+<{{type}} class='cd-back'>
+	<div aria-hidden='true' class='cd'><div></div></div>
+	<div aria-hidden='true' class='spoke'></div>
+	{{caller()}}
+</{{type}}>
+{%endmacro%}
+
+{%macro postedDate(date)%}
+{%set isoDate = date | ISODate %}
+<em><time class='format-date' datetime="{{isoDate}}">{{isoDate}}</time></em>
+{%endmacro%}

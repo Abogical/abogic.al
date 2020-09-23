@@ -1,0 +1,81 @@
+@import 'fontsource-roboto-slab/index.css';
+@custom-media --narrow (orientation: portrait), (max-width: 60em);
+@custom-media --wide (orientation: landscape) and (min-width: 60em);
+
+div {
+	display: flex;
+	margin: 0 auto;
+	justify-content: center;
+	@media (--narrow) {
+		flex-direction: column;
+		align-items: center;
+	}
+}
+
+p {
+	font-family: 'Roboto Slab', serif;
+	line-height: 1.5;
+}
+
+nav {
+	text-align: end;
+
+	@media (--wide) {
+		align-self: flex-start;
+		border-inline-end: 1px dashed;
+		margin-inline-end: 1.5rem;
+		padding-inline-start: 0.5rem;
+		position: sticky;
+		top: 1rem;
+	}
+	@media (--narrow) {
+		border-block-end: 1px dashed;
+		display: flex;
+		justify-content: space-between;
+		align-items: center;
+		nav > ul {
+			justify-content: flex-end;
+			margin: 0;
+		}
+	}
+
+	h1 {
+		width: min-content;
+		align-items: center;
+		@media (--wide) {
+			height: 5em;
+			margin-inline-end: 1.5rem;
+		}
+		a {
+			display: block;
+			font-size: 2rem;
+		}
+	}
+	@media (--narrow) {
+		& > ul {
+			flex-direction: row;
+			justify-items: center;
+		}
+	}
+}
+
+main {
+	max-width: 75ch;
+	@media (--wide) {
+		flex-basis: 75ch;
+	}
+	p + h2,
+	p + h3,
+	p + h4,
+	p + h5,
+	p + h6 {
+		margin-top: 2em;
+	}
+}
+
+header {
+	& > h1 {
+		margin-bottom: 0;
+	}
+	margin-bottom: 2rem;
+}

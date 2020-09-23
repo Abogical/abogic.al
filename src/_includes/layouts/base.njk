@@ -1,0 +1,51 @@
+---
+scripts: ['cdresize']
+styles: ['global']
+---
+<!doctype html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{% if title %}{{ title }} | {% endif %}{{ metadata.title }}</title>
+    <meta name="Description" content="{{ description or metadata.description }}">
+	<link rel="icon" type="image/svg+xml" href="/assets/favicon.svg">
+	{%if content | hasCode%}
+    <link rel="stylesheet" href="{{ '/darkcode.css' | url }}" media="(prefers-color-scheme: dark)"/>
+    <link rel="stylesheet" href="{{ '/lightcode.css' | url }}" media="(prefers-color-scheme: light)"/>
+	{%endif%}
+	{% for style in styles %}
+		<link rel="stylesheet" href="/{{style + '.css' | url}}"/>
+	{% endfor %}
+	{%for script in scripts%}
+		<script async src={{"/assets/"+script+".js" | url}}></script>
+	{%endfor%}
+    <link rel="alternate" href="{{ metadata.feed.path | url }}" type="application/atom+xml" title="{{ metadata.title }}">
+	{%for asset in ["cd.svg", "spoke.svg", "spokeBorder.svg"]%}
+		<link rel="preload" href="/assets/{{asset}}" as="image" crossorigin/>
+	{%endfor%}
+	<link rel="preload" href="/assets/materialdesignicons-webfont.woff2" as="font" crossorigin/>
+  </head>
+  <body>
+    {{ content | safe }}
+	<footer>
+		<address>
+			<a href='mailto:abogical@gmail.com'>
+				<i aria-hidden='true' class='mdi mdi-email'></i>abogical@gmail.com
+			</a>
+			<a target="_blank" href='https://github.com/Abogical'>
+				<i aria-hidden='true' class='mdi mdi-github'></i>Github
+			</a>
+			<a target="_blank" href='https://gitlab.com/Abogical'>
+				<i aria-hidden='true' class='mdi mdi-gitlab'></i>Gitlab
+			</a>
+			<a target="_blank" href='https://linkedin.com/in/Abogical'>
+				<i aria-hidden='true' class='mdi mdi-linkedin'></i>LinkedIn
+			</a>
+			<a href="{{ metadata.feed.path | url }}">
+				<i aria-hidden='true' class='mdi mdi-rss'></i>Feed
+			</a>
+		</address>
+	</footer>
+  </body>
+</html>

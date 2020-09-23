@@ -1,0 +1,77 @@
+{
+	"name": "eleventy-base-blog",
+	"version": "5.0.2",
+	"description": "A starter repository for a blog web site using the Eleventy static site generator.",
+	"scripts": {
+		"clean": "rimraf _site",
+		"cleanBuild": "run-s clean build",
+		"build": "cross-env NODE_ENV='production' run-s build:eleventy build:postcss build:rollup",
+		"build:eleventy": "eleventy",
+		"build:postcss": "postcss ./src/assets/*.pcss -d ./_site --ext '.css' --no-map",
+		"build:rollup": "rollup -c",
+		"dev": "mkdirp ./_site/assets && cross-env NODE_ENV='production' run-p dev:*",
+		"dev:eleventy": "eleventy --serve",
+		"dev:postcss": "postcss ./src/assets/*.pcss -d ./_site --ext '.css' -w",
+		"dev:nollup": "rollup -c -w",
+		"serve": "sirv _site",
+		"debug": "cross-env DEBUG=* npm run dev",
+		"lint": "eslint --ignore-path .gitignore . && prettier -c --ignore-path .gitignore .",
+		"lintFix": "eslint --fix --ignore-path .gitignore . && prettier --write --ignore-path .gitignore ."
+	},
+	"repository": {
+		"type": "git",
+		"url": "git://github.com/11ty/eleventy-base-blog.git"
+	},
+	"author": {
+		"name": "Abdelrahman Abdelrahman",
+		"email": "abogical@gmail.com",
+		"url": "https://abogic.al/"
+	},
+	"license": "AGPL-3.0-or-later",
+	"bugs": {
+		"url": "https://github.com/11ty/eleventy-base-blog/issues"
+	},
+	"homepage": "https://github.com/11ty/eleventy-base-blog#readme",
+	"devDependencies": {
+		"eslint": "^7.7.0",
+		"eslint-config-prettier": "^6.11.0",
+		"eslint-plugin-prettier": "^3.1.4",
+		"prettier": "^2.1.0",
+		"rimraf": "^3.0.2",
+		"sirv-cli": "^1.0.6"
+	},
+	"dependencies": {
+		"@11ty/eleventy": "^0.11.0",
+		"@11ty/eleventy-navigation": "^0.1.6",
+		"@11ty/eleventy-plugin-rss": "^1.0.9",
+		"@11ty/eleventy-plugin-syntaxhighlight": "^3.0.1",
+		"@babel/core": "^7.11.6",
+		"@babel/preset-env": "^7.11.5",
+		"@fullhuman/postcss-purgecss": "^3.0.0",
+		"@mdi/font": "^5.5.55",
+		"@rollup/plugin-babel": "^5.2.1",
+		"@rollup/plugin-node-resolve": "^9.0.0",
+		"cheerio": "^1.0.0-rc.3",
+		"cross-env": "^7.0.2",
+		"cssnano": "^4.1.10",
+		"cssnano-preset-advanced": "^4.0.7",
+		"date-fns": "^2.16.1",
+		"fontsource-fira-code": "^3.0.5",
+		"fontsource-roboto-slab": "^3.0.3",
+		"html-minifier": "^4.0.0",
+		"markdown-it": "^8.4.2",
+		"markdown-it-anchor": "^5.3.0",
+		"mkdirp": "^1.0.4",
+		"npm-run-all": "^4.1.5",
+		"postcss-cli": "^7.1.1",
+		"postcss-import": "^12.0.1",
+		"postcss-nested": "^4.2.3",
+		"postcss-preset-env": "^6.7.0",
+		"postcss-reporter": "^6.0.1",
+		"postcss-url": "^8.0.0",
+		"prismjs": "^1.21.0",
+		"rollup": "^2.26.11",
+		"rollup-plugin-multi-input": "^1.1.1",
+		"rollup-plugin-terser": "^7.0.2"
+	}
+}

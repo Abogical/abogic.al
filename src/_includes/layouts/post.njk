@@ -1,0 +1,9 @@
+---
+layout: layouts/blog.njk
+---
+{%from "macros.njk" import postedDate%}
+<header>
+<h1>{{ title }}</h1>
+{{postedDate(page.date)}}
+</header>
+{{ content | safe }}

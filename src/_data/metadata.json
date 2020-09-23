@@ -1,0 +1,12 @@
+{
+	"title": "Abdelrahman Abdelrahman",
+	"url": "https://abogical.gitlab.com/",
+	"description": "Abdelrahman Abdelrahman's personal site.",
+	"feed": {
+		"path": "/feed/feed.xml"
+	},
+	"author": {
+		"name": "Abdelrahman Abdelrahman",
+		"email": "abogical@gmail.com"
+	}
+}

@@ -1,0 +1,22 @@
+---
+layout: layouts/base.njk
+styles:
+ - index
+scripts: ['index']
+eleventyNavigation:
+  key: Home
+  order: 1
+---
+{%from "macros.njk" import nav, cdback%}
+
+{%call cdback('div') %}
+	<header>
+		<section>
+			<h1>Abdelrahman Abdelrahman</h1>
+			<em>Full Stack Engineer</em>
+		</section>
+		<nav>
+			{{ nav('/') }}
+		</nav>
+	</header>
+{%endcall%}

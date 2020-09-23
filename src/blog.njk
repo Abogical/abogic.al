@@ -1,0 +1,18 @@
+---
+pagination:
+  data: collections.blog
+  size: 20
+  alias: entries
+date: null
+layout: layouts/blog.njk
+permalink: /blog/{% if pagination.pageNumber > 0 %}{{ pagination.pageNumber }}/{% endif %}
+styles: ['blog']
+---
+{%from "macros.njk" import postedDate%}
+<ul>
+{%- for entry in entries | reverse -%}
+<li><a href="{{ entry.url }}"><h2>{{ entry.data.title }}</h2>
+{{postedDate(entry.date)}}</a>
+</li>
+{%- endfor %}
+</ul>

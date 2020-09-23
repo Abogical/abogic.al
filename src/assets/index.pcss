@@ -1,0 +1,29 @@
+html {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+
+header {
+	display: flex;
+	justify-content: center;
+	align-content: center;
+	align-items: center;
+	font-size: x-large;
+	margin: 0 auto;
+	h1 {
+		font-size: xxx-large;
+		width: min-content;
+		margin: 0;
+	}
+	@media (orientation: portrait), (max-width: 30em) {
+		flex-direction: column;
+		section {
+			text-align: center;
+		}
+		nav > ul {
+			flex-direction: row;
+			justify-items: center;
+		}
+	}
+}
