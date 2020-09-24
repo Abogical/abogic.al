@@ -1,12 +1,34 @@
 let updated = true;
+let x = 0,
+	y = 0,
+	beta = 0,
+	gamma = 0;
 
-const updateSpin = (x, y) => () => {
-	document.documentElement.style.setProperty('--spin', `${x + y}deg`);
-	updated = true;
-};
-window.addEventListener('mousemove', e => {
+const update = () => {
 	if (updated) {
 		updated = false;
-		window.requestAnimationFrame(updateSpin(e.clientX, e.clientY));
+		window.requestAnimationFrame(() => {
+			document.documentElement.style.setProperty('--spin', `${x + y + beta + gamma}deg`);
+			updated = true;
+		});
 	}
+};
+
+window.addEventListener('mousemove', e => {
+	x = e.clientX;
+	y = e.clientY;
+	update();
 });
+
+const setInitBetaAndGamma = e => {
+	const initBeta = e.beta;
+	const initGamma = e.gamma;
+	window.removeEventListener('deviceorientation', setInitBetaAndGamma, true);
+	window.addEventListener('deviceorientation', e => {
+		beta = (e.beta - initBeta) * 8;
+		gamma = (e.gamma - initGamma) * 8;
+		update();
+	});
+};
+
+window.addEventListener('deviceorientation', setInitBetaAndGamma, true);
