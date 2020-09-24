@@ -8,7 +8,12 @@ const update = () => {
 	if (updated) {
 		updated = false;
 		window.requestAnimationFrame(() => {
-			document.documentElement.style.setProperty('--spin', `${x + y + beta + gamma}deg`);
+			document.documentElement.style.setProperty(
+				'--spin',
+				`${
+					(180 / Math.PI) * Math.atan2(window.innerHeight / 2 - y, window.innerWidth / 2 - x) + beta + gamma
+				}deg`
+			);
 			updated = true;
 		});
 	}
