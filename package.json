@@ -1,7 +1,8 @@
 {
-	"name": "eleventy-base-blog",
-	"version": "5.0.2",
-	"description": "A starter repository for a blog web site using the Eleventy static site generator.",
+	"name": "abogical",
+	"private": true,
+	"version": "0.1.0",
+	"description": "Abdelrahman Abdelrahman's personal site.",
 	"scripts": {
 		"clean": "rimraf _site",
 		"cleanBuild": "run-s clean build",
@@ -12,7 +13,7 @@
 		"dev": "mkdirp ./_site/assets && cross-env NODE_ENV='production' run-p dev:*",
 		"dev:eleventy": "eleventy --serve",
 		"dev:postcss": "postcss ./src/assets/*.pcss -d ./_site --ext '.css' -w",
-		"dev:nollup": "rollup -c -w",
+		"dev:rollup": "rollup -c -w",
 		"serve": "sirv _site",
 		"debug": "cross-env DEBUG=* npm run dev",
 		"lint": "eslint --ignore-path .gitignore . && prettier -c --ignore-path .gitignore .",
@@ -20,18 +21,15 @@
 	},
 	"repository": {
 		"type": "git",
-		"url": "git://github.com/11ty/eleventy-base-blog.git"
+		"url": "https://gitlab.com/Abogical/abogical.git"
 	},
 	"author": {
 		"name": "Abdelrahman Abdelrahman",
 		"email": "abogical@gmail.com",
-		"url": "https://abogic.al/"
+		"url": "https://abogical.netlify.app"
 	},
 	"license": "AGPL-3.0-or-later",
-	"bugs": {
-		"url": "https://github.com/11ty/eleventy-base-blog/issues"
-	},
-	"homepage": "https://github.com/11ty/eleventy-base-blog#readme",
+	"homepage": "https://abogical.netlify.app",
 	"devDependencies": {
 		"eslint": "^7.7.0",
 		"eslint-config-prettier": "^6.11.0",
