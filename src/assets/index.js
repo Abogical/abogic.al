@@ -11,7 +11,8 @@ const update = () => {
 			document.documentElement.style.setProperty(
 				'--spin',
 				`${
-					(180 / Math.PI) * Math.atan2(window.innerHeight / 2 - y, window.innerWidth / 2 - x) + beta + gamma
+					(180 / Math.PI) * Math.atan2(window.innerHeight / 2 - y, window.innerWidth / 2 - x) +
+					(beta + gamma) * 4
 				}deg`
 			);
 			updated = true;
@@ -30,8 +31,8 @@ const setInitBetaAndGamma = e => {
 	const initGamma = e.gamma;
 	window.removeEventListener('deviceorientation', setInitBetaAndGamma, true);
 	window.addEventListener('deviceorientation', e => {
-		beta = (e.beta - initBeta) * 8;
-		gamma = (e.gamma - initGamma) * 8;
+		beta = e.beta - initBeta;
+		gamma = e.gamma - initGamma;
 		update();
 	});
 };
