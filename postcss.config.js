@@ -11,8 +11,7 @@ module.exports = {
 		...(process.env.NODE_ENV === 'production'
 			? [
 					require('@fullhuman/postcss-purgecss')({
-						content: ['./_site/**/*.html'],
-						variables: true
+						content: ['./_site/**/*.html']
 					})
 			  ]
 			: []),
