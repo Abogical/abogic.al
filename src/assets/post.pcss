@@ -60,6 +60,7 @@ nav {
 }
 
 main {
+	display: flow-root;
 	max-width: 75ch;
 	@media (--wide) {
 		flex-basis: 75ch;
@@ -77,6 +78,18 @@ main {
 			margin-left: auto;
 			margin-right: auto;
 		}
+	}
+	img,
+	svg {
+		margin: 1em;
+	}
+	.float-left {
+		max-width: 20%;
+		float: left;
+	}
+	.circle {
+		shape-outside: circle(50%);
+		clip-path: circle(50%);
 	}
 }
 
