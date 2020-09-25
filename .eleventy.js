@@ -30,7 +30,6 @@ module.exports = function (eleventyConfig) {
 
 	eleventyConfig.addCollection('tagList', require('./_11ty/getTagList'));
 
-	eleventyConfig.addPassthroughCopy('src/assets/*.svg');
 	eleventyConfig.addWatchTarget('src/assets');
 
 	eleventyConfig.addTransform('htmlmin', (content, outputPath) =>

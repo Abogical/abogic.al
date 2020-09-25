@@ -17,7 +17,6 @@ module.exports = {
 			  ]
 			: []),
 		require('postcss-url')({
-			filter: /\.(woff2?|eot|ttf)$/,
 			// Workaound until https://github.com/postcss/postcss-url/issues/121 is fixed.
 			url: ({ absolutePath }) => {
 				const urlPath = path.join('assets', path.basename(absolutePath));

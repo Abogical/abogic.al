@@ -2,14 +2,39 @@
 <ul>
 	<li><a href="/resume.pdf">Resume</a></li>
 	<li><a {% if current == '/about/' %} aria-current="page"{% endif %}href="/about">About</a></li>
-	<li><a {% if current == '/blog/' %} aria-current="page"{% endif %}href="/blog">Blog</a></li>
+	{%if collections.blog.length > 0%}<li><a {% if current == '/blog/' %} aria-current="page"{% endif %}href="/blog">Blog</a></li>{%endif%}
 </ul>
 {%endmacro%}
 
-{%macro cdback(type, element)%}
+{%macro cdback(type)%}
 <{{type}} class='cd-back'>
-	<div aria-hidden='true' class='cd'><div></div></div>
-	<div aria-hidden='true' class='spoke'></div>
+	<svg viewBox="-102.5 -102.5 205 205" aria-hidden='true' class='cd' alt='CD ICON'>
+		<defs>
+			<polygon id="spoke" points="-100,150 50,0 12.5,150"/>
+			<rect id="all" x="-102.5" y="-102.5" width="205" height="205" />
+		</defs>
+		<mask id="arcify">
+			<use fill="black" xlink:href="#all"/>
+			<polygon points="100,-100 25,-100 -25,100 -100,100" fill="white"/>
+		</mask>
+		<mask id="spokeBorder">
+			<use fill="white" xlink:href="#all"/>
+			<use stroke="black" stroke-width="25" xlink:href="#spoke"/>
+		</mask>
+		<circle fill="var(--color)" r="5"/>
+		<g fill="transparent" stroke="var(--color)">
+			<use stroke-width="5" xlink:href="#spoke"/>
+			<g mask="url(#spokeBorder)">
+				<circle r="15"/>
+				<circle r="100" stroke-width="5"/>
+				<g mask="url(#arcify)" class='shine' stroke-width="10">
+					<circle r="30"/>
+					<circle r="52.5"/>
+					<circle r="80" stroke-width="20"/>
+				</g>
+			</g>
+		</g>
+	</svg>
 	{{caller()}}
 </{{type}}>
 {%endmacro%}

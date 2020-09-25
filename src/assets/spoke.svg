@@ -1,9 +1,0 @@
-<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="-102.5 -102.5 205 205">
-	<defs>
-		<polygon id="spoke" points="-100,150 50,0 12.5,150"/>
-		<rect id="all" x="-102.5" y="-102.5" width="205" height="205" />
-	</defs>
-	<g fill="transparent" stroke="black">
-		<use stroke-width="5" href="#spoke"/>
-	</g>
-</svg>

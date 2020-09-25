@@ -5,9 +5,11 @@
 	--spin: 0deg;
 	--background: hsl(0deg, 0%, 10%);
 	--foreground: white;
+	--color: hsl(300deg, 20%, 20%);
 	@media (prefers-color-scheme: light) {
 		--background: hsl(0deg, 0%, 90%);
 		--foreground: black;
+		--color: hsl(120deg, 20%, 80%);
 	}
 	border-color: var(--foreground);
 }
@@ -82,34 +84,13 @@ nav > ul {
 
 .cd-back {
 	position: relative;
-	display: flex;
-	> .cd,
-	> .cd > div,
-	> .spoke {
-		width: 100%;
+	> svg {
 		height: 100%;
-	}
-	> .cd,
-	> .spoke {
+		width: 100%;
 		position: absolute;
 	}
-	> .cd > div,
-	> .spoke {
-		background-color: hsl(300deg, 20%, 20%);
-		@media (prefers-color-scheme: light) {
-			background-color: hsl(120deg, 20%, 80%);
-		}
-	}
-	> .cd {
-		mask: center / auto no-repeat url('/assets/spokeBorder.svg');
-		display: flex;
-		justify-content: center;
-	}
-	> .spoke {
-		mask: center / auto no-repeat url('/assets/spoke.svg');
-	}
-	> .cd > div {
-		mask: center / auto no-repeat url('/assets/cd.svg');
+
+	.shine {
 		transform: rotate(var(--spin));
 	}
 
