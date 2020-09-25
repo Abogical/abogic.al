@@ -10,7 +10,7 @@
 		"build:eleventy": "eleventy",
 		"build:postcss": "postcss ./src/assets/*.pcss -d ./_site --ext '.css' --no-map",
 		"build:rollup": "rollup -c",
-		"dev": "mkdirp ./_site/assets && cross-env NODE_ENV='production' run-p dev:*",
+		"dev": "mkdirp ./_site/assets && cross-env NODE_ENV='development' run-p dev:*",
 		"dev:eleventy": "eleventy --serve",
 		"dev:postcss": "postcss ./src/assets/*.pcss -d ./_site --ext '.css' -w",
 		"dev:rollup": "rollup -c -w",
