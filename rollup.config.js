@@ -14,7 +14,7 @@ export default {
 	preserveEntrySignatures: false,
 	output: {
 		format: 'es',
-		chunkFileNames: '[hash].js',
+		chunkFileNames: 'chunks/[name].js',
 		dir: '_site/assets/'
 	}
 };
