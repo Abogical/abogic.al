@@ -1,5 +1,12 @@
-// Dynamicaly importing this doesn't work for some reason :/
-import { formatDistance } from 'date-fns';
+import('date-fns').then(({ formatDistance }) => {
+	window.addEventListener('load', () => {
+		for (let element of document.getElementsByClassName('format-date')) {
+			const elementDate = new Date(element.getAttribute('datetime'));
+			element.insertAdjacentText('afterend', ` (${formatDistance(elementDate, new Date())} ago)`);
+			element.innerHTML = elementDate.toLocaleDateString();
+		}
+	});
+});
 
 let updated = true;
 
@@ -12,13 +19,5 @@ window.addEventListener('scroll', () => {
 	if (updated) {
 		updated = false;
 		window.requestAnimationFrame(updateSpin);
-	}
-});
-
-window.addEventListener('load', () => {
-	for (let element of document.getElementsByClassName('format-date')) {
-		const elementDate = new Date(element.getAttribute('datetime'));
-		element.insertAdjacentText('afterend', ` (${formatDistance(elementDate, new Date())} ago)`);
-		element.innerHTML = elementDate.toLocaleDateString();
 	}
 });
