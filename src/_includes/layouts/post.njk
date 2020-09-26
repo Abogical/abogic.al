@@ -2,6 +2,9 @@
 layout: layouts/blog.njk
 ---
 {%from "macros.njk" import postedDate%}
+{%if image%}
+<img id="header-image" {%if imageAlt%}alt="{{imageAlt}}"{%endif%} src="{{image}}"/>
+{%endif%}
 <header>
 <h1>{{ title }}</h1>
 {{postedDate(page.date)}}

@@ -79,13 +79,24 @@ main {
 			margin-right: auto;
 		}
 	}
+	#header-image {
+		max-width: 25%;
+		float: inline-end;
+		border: 0.5em solid var(--color);
+	}
 	img,
 	svg {
 		margin: 1em;
 	}
-	.float-left {
-		max-width: 20%;
-		float: left;
+	.float-start,
+	.float-end {
+		max-width: 25%;
+	}
+	.float-start {
+		float: inline-start;
+	}
+	.float-end {
+		float: inline-end;
 	}
 	.circle {
 		shape-outside: circle(50%);

@@ -5,12 +5,14 @@ date: 2020-09-25
 templateClass: tmpl-post
 eleventyNavigation:
     key: About
-    order: 3
+	order: 3
+image: /assets/me.jpg
+imageAlt: 'Abdelrahman Abdelrahman'
 ---
 
 Abdelrahman Abdelrahman is a creator of websites & desktop apps. Burning the candles at both the front and the back-end. The laundry list of his skills has been collected under this [resume](/resume.pdf).
 
-<svg viewBox="-102.5 -102.5 205 205" class='float-left circle' alt='CD ICON'>
+<svg viewBox="-102.5 -102.5 205 205" class='float-start circle' alt='CD ICON'>
 	<circle fill="var(--foreground)" r="5"/>
 	<g fill="transparent" stroke="var(--foreground)">
 		<use stroke-width="5" xlink:href="#spoke"/>
