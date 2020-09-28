@@ -1,4 +1,3 @@
-@import '@mdi/font/css/materialdesignicons.css';
 @import 'fontsource-fira-code/index.css';
 
 :root {
@@ -35,6 +34,23 @@ footer {
 		display: inline-block;
 		margin: 1em;
 		white-space: nowrap;
+		svg {
+			vertical-align: middle;
+			margin-right: 0.25em;
+			width: 1em;
+			height: 1em;
+			fill: var(--foreground);
+			transition-duration: 0.2s;
+			transition-property: fill;
+		}
+
+		&:hover,
+		&:active,
+		&:focus {
+			svg {
+				fill: var(--background);
+			}
+		}
 	}
 }
 

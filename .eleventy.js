@@ -7,6 +7,7 @@ const markdownItAnchor = require('markdown-it-anchor');
 const { minify: htmlmin } = require('html-minifier');
 const { load } = require('cheerio');
 const { formatISO } = require('date-fns');
+const brands = require('simple-icons');
 
 module.exports = function (eleventyConfig) {
 	eleventyConfig.addPlugin(pluginRss);
@@ -27,6 +28,8 @@ module.exports = function (eleventyConfig) {
 	eleventyConfig.addFilter('ISODate', date => formatISO(date, { representation: 'date' }));
 
 	eleventyConfig.addFilter('hasCode', html => load(html)('code').length > 0);
+
+	eleventyConfig.addFilter('brand', name => brands.get(name).svg);
 
 	eleventyConfig.addCollection('tagList', require('./_11ty/getTagList'));
 
