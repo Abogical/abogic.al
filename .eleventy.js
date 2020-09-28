@@ -8,11 +8,13 @@ const { minify: htmlmin } = require('html-minifier');
 const { load } = require('cheerio');
 const { formatISO } = require('date-fns');
 const brands = require('simple-icons');
+const lazyImagesPlugin = require('eleventy-plugin-lazyimages');
 
 module.exports = function (eleventyConfig) {
 	eleventyConfig.addPlugin(pluginRss);
 	eleventyConfig.addPlugin(pluginSyntaxHighlight);
 	eleventyConfig.addPlugin(pluginNavigation);
+	eleventyConfig.addPlugin(lazyImagesPlugin);
 
 	eleventyConfig.setDataDeepMerge(true);
 

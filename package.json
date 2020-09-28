@@ -53,6 +53,7 @@
 		"cssnano": "^4.1.10",
 		"cssnano-preset-advanced": "^4.0.7",
 		"date-fns": "^2.16.1",
+		"eleventy-plugin-lazyimages": "^2.0.1",
 		"fontsource-fira-code": "^3.0.5",
 		"fontsource-roboto-slab": "^3.0.3",
 		"html-minifier": "^4.0.0",
