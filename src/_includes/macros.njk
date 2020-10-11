@@ -1,4 +1,4 @@
-{%macro nav(current)%}
+{%macro nav(current, collections)%}
 <ul>
 	<li><a href="/resume.pdf">Resume</a></li>
 	<li><a {% if current == '/about/' %} aria-current="page"{% endif %}href="/about">About</a></li>
