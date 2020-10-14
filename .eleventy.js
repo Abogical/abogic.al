@@ -38,15 +38,16 @@ module.exports = function (eleventyConfig) {
 	eleventyConfig.addPassthroughCopy('src/assets/*.jpg');
 	eleventyConfig.addWatchTarget('src/assets');
 
-	eleventyConfig.addTransform('htmlmin', (content, outputPath) =>
-		outputPath.endsWith('.html')
-			? htmlmin(content, {
+	eleventyConfig.addTransform('htmlmin', (content, outputPath) => {
+		if (outputPath)
+			if (outputPath.endsWith('.html'))
+				return htmlmin(content, {
 					useShortDoctype: true,
 					removeComments: true,
 					collapseWhitespace: true
-			  })
-			: content
-	);
+				});
+		return content;
+	});
 
 	/* Markdown Overrides */
 	let markdownLibrary = markdownIt({
