@@ -1,7 +1,7 @@
 ---
 layout: layouts/post.njk
 title: About Him
-date: 2020-10-14
+date: 2020-10-15
 templateClass: tmpl-post
 eleventyNavigation:
 	key: About
@@ -40,7 +40,7 @@ Using his Python experience, he's thrown enough code to [BorgBackup](https://git
 
 His freelancing career started from 2016. From the little time he has left from his college studies, he successfully accomplished his jobs at [Upwork](https://www.upwork.com/o/profiles/users/~01c08550e06312dd43/) and [Bountysource](https://www.bountysource.com/people/46541-abogical). Latter of which was on [BorgBackup bounties](https://github.com/borgbackup/borg/issues?q=is%3Aissue+label%3ABountysource+abogical+is%3Aclosed). Former of which is awarded 5-star reviews on all his jobs so far.
 
-From 2018, He started bieng more involved in web development. Reading a [few](https://www.apress.com/gp/book/9781484224625) [books](https://www.amazon.com/Professional-JavaScript-Developers-Nicholas-Zakas/dp/1118026691), he mastered the basics of HTML5 & CSS3 & JavaScript. By [volunteering for the IEEE SSCS](https://sscsalex.org/bio/abogical), his JavaScript experience grew. It introduced him to React, Gatsby and the JAMStack architecture to produce [their site](https://sscsalex.org).
+From 2018, He put more of his effort onto web development. Reading a [few](https://www.apress.com/gp/book/9781484224625) [books](https://www.amazon.com/Professional-JavaScript-Developers-Nicholas-Zakas/dp/1118026691), he mastered the basics of HTML5 & CSS3 & JavaScript. By [volunteering for the IEEE SSCS AlexSC](https://sscsalex.org/bio/abogical), his JavaScript experience grew. Introducing him to React, Gatsby and the JAMStack architecture to produce [their site](https://sscsalex.org).
 
 You may find his code in other projects including:
 
