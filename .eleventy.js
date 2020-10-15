@@ -15,7 +15,8 @@ module.exports = function (eleventyConfig) {
 	eleventyConfig.addPlugin(pluginSyntaxHighlight);
 	eleventyConfig.addPlugin(pluginNavigation);
 	eleventyConfig.addPlugin(lazyImagesPlugin, {
-		scriptSrc: '/assets/lazyload.min.js'
+		scriptSrc: '/assets/lazyload.min.js',
+		cacheFile: '.cache/lazyimages.json'
 	});
 
 	eleventyConfig.setDataDeepMerge(true);
