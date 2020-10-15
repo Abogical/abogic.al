@@ -14,7 +14,9 @@ module.exports = function (eleventyConfig) {
 	eleventyConfig.addPlugin(pluginRss);
 	eleventyConfig.addPlugin(pluginSyntaxHighlight);
 	eleventyConfig.addPlugin(pluginNavigation);
-	eleventyConfig.addPlugin(lazyImagesPlugin);
+	eleventyConfig.addPlugin(lazyImagesPlugin, {
+		scriptSrc: '/assets/lazyload.min.js'
+	});
 
 	eleventyConfig.setDataDeepMerge(true);
 
@@ -36,6 +38,7 @@ module.exports = function (eleventyConfig) {
 	eleventyConfig.addCollection('tagList', require('./_11ty/getTagList'));
 
 	eleventyConfig.addPassthroughCopy('src/assets/*.jpg');
+	eleventyConfig.addPassthroughCopy({ 'node_modules/lazysizes/lazysizes.min.js': '/assets/lazyload.min.js' });
 	eleventyConfig.addWatchTarget('src/assets');
 
 	eleventyConfig.addTransform('htmlmin', (content, outputPath) => {
