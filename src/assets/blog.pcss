@@ -9,7 +9,17 @@ main {
 				display: flex;
 				align-items: center;
 				justify-content: space-between;
-				width: 100%;
+				@media (orientation: portrait), (max-width: 60em) {
+					flex-direction: column-reverse;
+					& > img {
+						margin-block-end: 1em;
+					}
+				}
+				@media (orientation: landscape) and (min-width: 60em) {
+					& > img {
+						margin-inline-start: 1em;
+					}
+				}
 				header {
 					margin-bottom: 0;
 					h2 {
@@ -18,11 +28,10 @@ main {
 				}
 				font-weight: normal;
 				font-family: 'Fira Code', monospace;
-				& > img {
-					margin: 0;
-					margin-inline-start: 1em;
-				}
 			}
 		}
+	}
+	img {
+		margin: 0;
 	}
 }
