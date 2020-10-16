@@ -11,7 +11,7 @@ styles: ['blog']
 {%from "macros.njk" import postedDate%}
 <ul>
 {%- for entry in entries | reverse -%}
-<li><a href="{{ entry.data.link | default(entry.url) }}">{%if entry.data.image%}<img  width='50' height='50' src="{{entry.data.image}}"/>{%endif%}<h2>{{ entry.data.title }}</h2>
+<li><a href="{{ entry.data.link | default(entry.url) }}">{%if entry.data.image%}<img  width='50' height='50' src="{{entry.data.image}}" {%if imageAlt%}alt="{{imageAlt}}"{%endif%}/>{%endif%}<h2>{{ entry.data.title }}</h2>
 {{postedDate(entry.date)}}</a>
 </li>
 {%- endfor %}
