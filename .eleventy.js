@@ -39,6 +39,7 @@ module.exports = function (eleventyConfig) {
 	eleventyConfig.addCollection('tagList', require('./_11ty/getTagList'));
 
 	eleventyConfig.addPassthroughCopy('src/assets/*.jpg');
+	eleventyConfig.addPassthroughCopy('src/assets/*.svg');
 	eleventyConfig.addPassthroughCopy({ 'node_modules/lazysizes/lazysizes.min.js': '/assets/lazyload.min.js' });
 	eleventyConfig.addWatchTarget('src/assets');
 
