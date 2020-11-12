@@ -8,6 +8,7 @@ const { load } = require('cheerio');
 const { formatISO } = require('date-fns');
 const brands = require('simple-icons');
 const lazyImagesPlugin = require('eleventy-plugin-lazyimages');
+const safeLinks = require('eleventy-plugin-safe-external-links');
 
 module.exports = function (eleventyConfig) {
 	eleventyConfig.addPlugin(pluginRss);
@@ -18,6 +19,9 @@ module.exports = function (eleventyConfig) {
 		scriptSrc: '/assets/lazyload.min.js',
 		cacheFile: '.cache/lazyimages.json'
 	});
+	eleventyConfig.addPlugin(safeLinks, {
+		noreferrer: true
+	})
 
 	eleventyConfig.setDataDeepMerge(true);
 
