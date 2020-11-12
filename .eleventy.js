@@ -4,7 +4,6 @@ const pluginSyntaxHighlight = require('@11ty/eleventy-plugin-syntaxhighlight');
 const pluginNavigation = require('@11ty/eleventy-navigation');
 const markdownIt = require('markdown-it');
 const markdownItAnchor = require('markdown-it-anchor');
-const { minify: htmlmin } = require('html-minifier-terser');
 const { load } = require('cheerio');
 const { formatISO } = require('date-fns');
 const brands = require('simple-icons');
@@ -43,18 +42,6 @@ module.exports = function (eleventyConfig) {
 	eleventyConfig.addPassthroughCopy('src/assets/*.svg');
 	eleventyConfig.addPassthroughCopy({ 'node_modules/lazysizes/lazysizes.min.js': '/assets/lazyload.min.js' });
 	eleventyConfig.addWatchTarget('src/assets');
-
-	eleventyConfig.addTransform('htmlmin', (content, outputPath) => {
-		if (outputPath)
-			if (outputPath.endsWith('.html'))
-				return htmlmin(content, {
-					useShortDoctype: true,
-					removeComments: true,
-					collapseWhitespace: true,
-					minifyJS: true
-				});
-		return content;
-	});
 
 	/* Markdown Overrides */
 	let markdownLibrary = markdownIt({
