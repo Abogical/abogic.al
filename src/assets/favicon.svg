@@ -5,21 +5,21 @@
 		<circle id="circle" r="102.5" fill="white"/>
 	</defs>
 	<mask id="arcify">
-		<use fill="black" xlink:href="#all"/>
+		<use fill="black" href="#all"/>
 		<polygon points="100,-100 25,-100 -25,100 -100,100" fill="white"/>
 	</mask>
 	<mask id="spokeBorder">
-		<use fill="white" xlink:href="#all"/>
-		<use stroke="black" stroke-width="25" xlink:href="#spoke"/>
+		<use fill="white" href="#all"/>
+		<use stroke="black" stroke-width="25" href="#spoke"/>
 	</mask>
 	<mask id="circleMask">
-		<use fill="black" xlink:href="#all"/>
-		<use xlink:href="#circle"/>
+		<use fill="black" href="#all"/>
+		<use href="#circle"/>
 	</mask>
-	<use xlink:href="#circle"/>
+	<use href="#circle"/>
 	<circle r="5"/>
 	<g fill="transparent" stroke="black">
-		<use stroke-width="5" mask="url(#circleMask)" xlink:href="#spoke"/>
+		<use stroke-width="5" mask="url(#circleMask)" href="#spoke"/>
 		<g mask="url(#spokeBorder)">
 			<circle r="15"/>
 			<circle r="100" stroke-width="5"/>

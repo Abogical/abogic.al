@@ -14,16 +14,16 @@
 			<rect id="all" x="-102.5" y="-102.5" width="205" height="205" />
 		</defs>
 		<mask id="arcify">
-			<use fill="black" xlink:href="#all"/>
+			<use fill="black" href="#all"/>
 			<polygon points="100,-100 25,-100 -25,100 -100,100" fill="white"/>
 		</mask>
 		<mask id="spokeBorder">
-			<use fill="white" xlink:href="#all"/>
-			<use stroke="black" stroke-width="25" xlink:href="#spoke"/>
+			<use fill="white" href="#all"/>
+			<use stroke="black" stroke-width="25" href="#spoke"/>
 		</mask>
 		<circle fill="var(--color)" r="5"/>
 		<g fill="transparent" stroke="var(--color)">
-			<use stroke-width="5" xlink:href="#spoke"/>
+			<use stroke-width="5" href="#spoke"/>
 			<g mask="url(#spokeBorder)">
 				<circle r="15"/>
 				<circle r="100" stroke-width="5"/>

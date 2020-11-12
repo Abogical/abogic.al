@@ -15,7 +15,7 @@ Abdelrahman Abdelrahman is a creator of websites & desktop apps. Burning the can
 <svg viewBox="-102.5 -102.5 205 205" class='float-start circle' alt='CD ICON'>
 	<circle fill="var(--foreground)" r="5"/>
 	<g fill="transparent" stroke="var(--foreground)">
-		<use stroke-width="5" xlink:href="#spoke"/>
+		<use stroke-width="5" href="#spoke"/>
 		<g mask="url(#spokeBorder)">
 			<circle r="15"/>
 			<circle r="100" stroke-width="5"/>
