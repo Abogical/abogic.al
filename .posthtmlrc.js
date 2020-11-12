@@ -10,6 +10,7 @@ module.exports = {
 		}),
 		htmlnano({
 			...htmlnano.presets.max,
+			collapseWhitespace: 'aggressive',
 			minifySvg: {
 				plugins: [
 					{
