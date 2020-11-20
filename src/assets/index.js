@@ -13,14 +13,16 @@ const removeListener = (type, fn, opt) => {
 };
 
 const queryChange = () => {
-	if (motionQuery.matches)
-		for (const [type, [fn, opt]] of Object.entries(listened)) window.removeEventListener(type, fn, opt);
-	else {
-		let updated = true,
-			x = 0,
-			y = 0,
-			beta = 0,
-			gamma = 0;
+	if (motionQuery.matches) {
+		for (const [type, [fn, opt]] of Object.entries(listened)) {
+			window.removeEventListener(type, fn, opt);
+		}
+	} else {
+		let updated = true;
+		let x = 0;
+		let y = 0;
+		let beta = 0;
+		let gamma = 0;
 
 		const update = () => {
 			if (updated) {
@@ -29,8 +31,8 @@ const queryChange = () => {
 					document.documentElement.style.setProperty(
 						'--spin',
 						`${
-							(180 / Math.PI) * Math.atan2(window.innerHeight / 2 - y, window.innerWidth / 2 - x) +
-							(beta + gamma) * 4
+							((180 / Math.PI) * Math.atan2((window.innerHeight / 2) - y, (window.innerWidth / 2) - x)) +
+							((beta + gamma) * 4)
 						}deg`
 					);
 					updated = true;
@@ -38,21 +40,21 @@ const queryChange = () => {
 			}
 		};
 
-		addListener('mousemove', e => {
-			x = e.clientX;
-			y = e.clientY;
+		addListener('mousemove', event => {
+			x = event.clientX;
+			y = event.clientY;
 			update();
 		});
 
-		const setInitBetaAndGamma = e => {
-			const initBeta = e.beta;
-			const initGamma = e.gamma;
+		const setInitBetaAndGamma = event => {
+			const initBeta = event.beta;
+			const initGamma = event.gamma;
 			removeListener('deviceorientation', setInitBetaAndGamma, true);
 			addListener(
 				'deviceorientation',
-				e => {
-					beta = e.beta - initBeta;
-					gamma = e.gamma - initGamma;
+				event => {
+					beta = event.beta - initBeta;
+					gamma = event.gamma - initGamma;
 					update();
 				},
 				true

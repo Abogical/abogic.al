@@ -17,8 +17,8 @@
 		"dev:rollup": "rollup -c -w",
 		"serve": "sirv _site",
 		"debug": "cross-env DEBUG=* npm run dev",
-		"lint": "eslint --ignore-path .gitignore . && prettier -c --ignore-path .gitignore .",
-		"lintFix": "eslint --fix --ignore-path .gitignore . && prettier --write --ignore-path .gitignore ."
+		"lint": "xo",
+		"lintFix": "xo --fix"
 	},
 	"repository": {
 		"type": "git",
@@ -33,12 +33,9 @@
 	"homepage": "https://abogic.al",
 	"devDependencies": {
 		"babel-eslint": "^10.1.0",
-		"eslint": "^7.7.0",
-		"eslint-config-prettier": "^6.11.0",
-		"eslint-plugin-prettier": "^3.1.4",
-		"prettier": "^2.1.0",
 		"rimraf": "^3.0.2",
-		"sirv-cli": "^1.0.6"
+		"sirv-cli": "^1.0.6",
+		"xo": "^0.34.2"
 	},
 	"dependencies": {
 		"@11ty/eleventy": "^0.11.0",

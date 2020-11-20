@@ -1,6 +1,6 @@
-import('date-fns').then(({ formatDistance }) => {
+import('date-fns').then(({formatDistance}) => {
 	window.addEventListener('load', () => {
-		for (let element of document.getElementsByClassName('format-date')) {
+		for (const element of document.querySelectorAll('.format-date')) {
 			const elementDate = new Date(element.getAttribute('datetime'));
 			element.insertAdjacentText('afterend', ` (${formatDistance(elementDate, new Date())} ago)`);
 			element.innerHTML = elementDate.toLocaleDateString();

@@ -40,7 +40,7 @@ module.exports = function (eleventyConfig) {
 
 	eleventyConfig.addFilter('brand', name => brands.get(name).svg);
 
-	eleventyConfig.addCollection('tagList', require('./_11ty/getTagList'));
+	eleventyConfig.addCollection('tagList', require('./_11ty/get-tag-list'));
 
 	eleventyConfig.addPassthroughCopy('src/assets/*.jpg');
 	eleventyConfig.addPassthroughCopy('src/assets/*.svg');

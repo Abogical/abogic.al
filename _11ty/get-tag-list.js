@@ -1,17 +1,18 @@
 module.exports = function (collection) {
-	let tagSet = new Set();
-	collection.getAll().forEach(function (item) {
+	const tagSet = new Set();
+	collection.getAll().forEach(item => {
 		if ('tags' in item.data) {
 			let tags = item.data.tags;
 
-			tags = tags.filter(function (item) {
+			tags = tags.filter(item => {
 				switch (item) {
-					// this list should match the `filter` list in tags.njk
+					// This list should match the `filter` list in tags.njk
 					case 'all':
 					case 'nav':
 					case 'post':
 					case 'blog':
 						return false;
+					default:
 				}
 
 				return true;
@@ -23,6 +24,6 @@ module.exports = function (collection) {
 		}
 	});
 
-	// returning an array in addCollection works in Eleventy 0.5.3
+	// Returning an array in addCollection works in Eleventy 0.5.3
 	return [...tagSet];
 };
