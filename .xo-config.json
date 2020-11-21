@@ -1,3 +1,4 @@
 {
+	"prettier": true,
 	"overrides": [{"files": "src/assets/*.js", "envs": ["es2020", "browser"]}]
 }

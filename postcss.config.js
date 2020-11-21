@@ -8,13 +8,13 @@ module.exports = {
 		require('postcss-preset-env')({
 			stage: 0
 		}),
-		...(process.env.NODE_ENV === 'production' ?
-			[
-				require('@fullhuman/postcss-purgecss')({
-					content: ['./_site/**/*.html']
-				})
-			] :
-			[]),
+		...(process.env.NODE_ENV === 'production'
+			? [
+					require('@fullhuman/postcss-purgecss')({
+						content: ['./_site/**/*.html']
+					})
+			  ]
+			: []),
 		require('postcss-url')({
 			// Workaound until https://github.com/postcss/postcss-url/issues/121 is fixed.
 			url: ({absolutePath}) => {
