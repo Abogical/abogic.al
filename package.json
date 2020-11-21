@@ -17,8 +17,8 @@
 		"dev:rollup": "rollup -c -w",
 		"serve": "sirv _site",
 		"debug": "cross-env DEBUG=* npm run dev",
-		"lint": "xo",
-		"lintFix": "xo --fix"
+		"lint": "xo && prettier --check --ignore-path .gitignore **/*.json",
+		"lintFix": "xo --fix && prettier --write --ignore-path .gitignore **/*.json"
 	},
 	"repository": {
 		"type": "git",
@@ -32,7 +32,6 @@
 	"license": "AGPL-3.0-or-later",
 	"homepage": "https://abogic.al",
 	"devDependencies": {
-		"babel-eslint": "^10.1.0",
 		"rimraf": "^3.0.2",
 		"sirv-cli": "^1.0.6",
 		"xo": "^0.34.2"
