@@ -25,8 +25,8 @@ styles: ['global']
     {{ content | safe }}
 	<footer>
 		<address>
-			<a href='mailto:abogical@gmail.com'>
-				{{'Gmail' | brand | safe}}abogical@gmail.com
+			<a href='mailto:{{metadata.author.email}}'>
+				{{metadata.author.email}}
 			</a>
 			<a target="_blank" href='https://github.com/Abogical'>
 				{{'GitHub' | brand | safe}}GitHub
