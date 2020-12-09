@@ -71,6 +71,7 @@
 		"posthtml-cli": "^0.8.0",
 		"posthtml-sri": "^1.0.5",
 		"prismjs": "^1.21.0",
+		"remixicon": "^2.5.0",
 		"rollup": "^2.26.11",
 		"rollup-plugin-multi-input": "^1.1.1",
 		"rollup-plugin-terser": "^7.0.2",

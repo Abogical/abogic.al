@@ -1,4 +1,5 @@
-const fs = require('fs');
+const {readFile, readFileSync} = require('fs');
+const {join} = require('path');
 const pluginRss = require('@11ty/eleventy-plugin-rss');
 const pluginSyntaxHighlight = require('@11ty/eleventy-plugin-syntaxhighlight');
 const pluginNavigation = require('@11ty/eleventy-navigation');
@@ -38,7 +39,7 @@ module.exports = function (eleventyConfig) {
 
 	eleventyConfig.addFilter('hasCode', html => load(html)('code').length > 0);
 
-	eleventyConfig.addFilter('brand', name => brands.get(name).svg);
+	eleventyConfig.addNunjucksAsyncFilter('icon', (name, cb) => readFile(join('node_modules', 'remixicon', 'icons', `${name}.svg`), {encoding: 'utf-8'}, (err, data) => cb(err, data.trim())))
 
 	eleventyConfig.addCollection('tagList', require('./_11ty/get-tag-list'));
 
@@ -63,7 +64,7 @@ module.exports = function (eleventyConfig) {
 	eleventyConfig.setBrowserSyncConfig({
 		callbacks: {
 			ready: function (err, browserSync) {
-				const content_404 = fs.readFileSync('_site/404.html');
+				const content_404 = readFileSync('_site/404.html');
 
 				browserSync.addMiddleware('*', (req, res) => {
 					// Provides the 404 content without redirect.
