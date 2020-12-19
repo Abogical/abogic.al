@@ -7,7 +7,6 @@ const markdownIt = require('markdown-it');
 const markdownItAnchor = require('markdown-it-anchor');
 const { load } = require('cheerio');
 const { formatISO } = require('date-fns');
-const brands = require('simple-icons');
 const lazyImagesPlugin = require('eleventy-plugin-lazyimages');
 const safeLinks = require('eleventy-plugin-safe-external-links');
 
