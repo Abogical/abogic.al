@@ -2,7 +2,6 @@
 layout: layouts/post.njk
 title: About Him
 date: 2020-10-15
-templateClass: tmpl-post
 eleventyNavigation:
 	key: About
 	order: 1
