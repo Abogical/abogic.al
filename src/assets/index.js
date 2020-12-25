@@ -21,6 +21,7 @@ const queryChange = () => {
 		let updated = true;
 		let x = 0;
 		let y = 0;
+		let alpha = 0;
 		let beta = 0;
 		let gamma = 0;
 
@@ -32,7 +33,7 @@ const queryChange = () => {
 						'--spin',
 						`${
 							(180 / Math.PI) * Math.atan2(window.innerHeight / 2 - y, window.innerWidth / 2 - x) +
-							(beta + gamma) * 4
+							(alpha + beta + gamma) * 4
 						}deg`
 					);
 					updated = true;
@@ -46,13 +47,15 @@ const queryChange = () => {
 			update();
 		});
 
-		const setInitBetaAndGamma = event => {
+		const setInitAlphaBetaAndGamma = event => {
+			const initAlpha = event.alpha;
 			const initBeta = event.beta;
 			const initGamma = event.gamma;
-			removeListener('deviceorientation', setInitBetaAndGamma, true);
+			removeListener('deviceorientation', setInitAlphaBetaAndGamma, true);
 			addListener(
 				'deviceorientation',
 				event => {
+					alpha = event.alpha - initAlpha;
 					beta = event.beta - initBeta;
 					gamma = event.gamma - initGamma;
 					update();
@@ -61,7 +64,7 @@ const queryChange = () => {
 			);
 		};
 
-		addListener('deviceorientation', setInitBetaAndGamma, true);
+		addListener('deviceorientation', setInitAlphaBetaAndGamma, true);
 	}
 };
 
