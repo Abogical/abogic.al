@@ -29,7 +29,7 @@ Abdelrahman Abdelrahman is a creator of websites & desktop apps. Burning the can
 
 ## Abogical
 
-An obsession with anything 'logical' led him to create the _'Abogical'_ pseudonym that he goes by. This obsession includes subjects related to mathematics and _(suprise)_ computers. It's reported that this CD icon is a relic of his [LittleBigPlanet days](https://lbp.me/u/abody_xplay1), however he hasn't confirmed this as of yet.
+An obsession with anything 'logical' led him to create the _'Abogical'_ pseudonym that he goes by. This obsession includes subjects related to mathematics and _(suprise)_ computers. It's reported that this CD icon is a relic of his [LittleBigPlanet days](https://web.archive.org/web/20121103084209/https://lbp.me/u/abody_xplay1), however he hasn't confirmed this as of yet.
 
 ## What he did
 
