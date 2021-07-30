@@ -9,18 +9,7 @@ main {
 				display: flex;
 				align-items: center;
 				justify-content: space-between;
-				@media (orientation: portrait), (max-width: 60em) {
-					flex-direction: column-reverse;
-					& > img {
-						margin-block-end: 1em;
-					}
-				}
-				@media (orientation: landscape) and (min-width: 60em) {
-					& > img {
-						margin-inline-start: 1em;
-					}
-				}
-				header {
+				& header {
 					margin-bottom: 0;
 					h2 {
 						margin: 0;
@@ -31,7 +20,22 @@ main {
 			}
 		}
 	}
-	img {
+	& img {
 		margin: 0;
+	}
+}
+
+@media (orientation: portrait), (max-width: 60em) {
+	main > ul > li > a {
+		flex-direction: column-reverse;
+		& > img {
+			margin-block-end: 1em;
+		}
+	}
+}
+
+@media (orientation: landscape) and (min-width: 60em) {
+	main > ul > li > a > img {
+		margin-inline-start: 1em;
 	}
 }

@@ -1,4 +1,4 @@
-@import 'fontsource-roboto-slab/index.css';
+@import '@fontsource/roboto-slab/index.css';
 @custom-media --narrow (orientation: portrait), (max-width: 60em);
 @custom-media --wide (orientation: landscape) and (min-width: 60em);
 
@@ -6,16 +6,10 @@ body {
 	display: grid;
 	grid-template-columns: fit-content(75ch);
 	justify-content: center;
-	@media (--wide){
-		grid-template-columns: 1fr fit-content(75ch) 1fr;
-	}
 	gap: 1.5rem;
 }
 
 footer {
-	@media (--wide){
-		grid-row-start: 2;
-	}
 	grid-column: 1 / -1;
 	margin: 0;
 }
@@ -29,93 +23,62 @@ nav {
 	text-align: end;
 	display: flex;
 
-	@media (--wide) {
-		align-self: flex-start;
-		flex-direction: column;
-		align-items: flex-end;
-		border-inline-end: 1px dashed;
-		padding-inline-start: 0.5rem;
-		position: sticky;
-		top: 1rem;
-	}
-	@media (--narrow) {
-		border-block-end: 1px dashed;
-		justify-content: space-between;
-		align-items: center;
-		nav > ul {
-			justify-content: flex-end;
-			margin: 0;
-		}
-	}
-
-	h1 {
+	& h1 {
 		width: min-content;
 		align-items: center;
-		@media (--wide) {
-			height: 5em;
-			margin-inline-end: 1.5rem;
-		}
-		a {
+		& a {
 			display: block;
 			font-size: 2rem;
-		}
-	}
-	@media (--narrow) {
-		& > ul {
-			flex-direction: row;
-			justify-content: flex-end;
 		}
 	}
 }
 
 main {
 	display: flow-root;
-	@media (--wide) {
-		flex-basis: 75ch;
-	}
-	p {
+	& p {
 		text-align: justify;
 	}
-	p + h2,
-	p + h3,
-	p + h4,
-	p + h5,
-	p + h6 {
+	& p + h2,
+	& p + h3,
+	& p + h4,
+	& p + h5,
+	& p + h6 {
 		margin-top: 2em;
 	}
-	pre {
+	& pre {
 		max-width: 85vw;
 		&[class*='language-'] {
 			margin-left: auto;
 			margin-right: auto;
 		}
 	}
-	#header-image {
-		max-width: 25%;
-		float: inline-end;
-		border: 0.5em solid var(--color);
-	}
-	img,
-	svg {
+	& img,
+	& svg {
 		margin: 1em;
 	}
-	img {
+	& img {
 		height: auto;
 	}
-	.float-start,
-	.float-end {
+	& .float-start,
+	& .float-end {
 		max-width: 25%;
 	}
-	.float-start {
+	& .float-start {
 		float: inline-start;
 	}
-	.float-end {
+	& .float-end {
 		float: inline-end;
 	}
-	.circle {
+	& .circle {
 		shape-outside: circle(50%);
 		clip-path: circle(50%);
 	}
+}
+
+#header-image {
+	max-width: 25%;
+	float: inline-end;
+	border: 0.5em solid var(--color);
 }
 
 header {
@@ -127,4 +90,49 @@ header {
 
 .cd-back {
 	display: flex;
+}
+
+@media (--wide){
+	body {
+		grid-template-columns: 1fr fit-content(75ch) 1fr;
+	}
+
+	footer {
+		grid-row-start: 2;
+	}
+
+	nav {
+		align-self: flex-start;
+		flex-direction: column;
+		align-items: flex-end;
+		border-inline-end: 1px dashed;
+		padding-inline-start: 0.5rem;
+		position: sticky;
+		top: 1rem;
+
+		& h1 {
+			height: 5em;
+			margin-inline-end: 1.5rem;
+		}
+	}
+
+	main {
+		flex-basis: 75ch;
+	}
+}
+
+@media (--narrow) {
+	nav {
+		border-block-end: 1px dashed;
+		justify-content: space-between;
+		align-items: center;
+		& nav > ul {
+			justify-content: flex-end;
+			margin: 0;
+		}
+		& > ul {
+			flex-direction: row;
+			justify-content: flex-end;
+		}
+	}
 }

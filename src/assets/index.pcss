@@ -11,26 +11,32 @@ header {
 	align-items: center;
 	font-size: x-large;
 	margin: 0 auto;
-	h1 {
+	& h1 {
 		font-size: xxx-large;
 		width: min-content;
 		margin: 0;
 	}
-	@media (orientation: portrait), (max-width: 30em) {
+}
+
+@media (orientation: portrait), (max-width: 30em) {
+	header {
 		flex-direction: column;
-		section {
+		& section {
 			text-align: center;
 			& > h1 {
 				margin: 0 auto;
 			}
 		}
-		nav > ul {
+		& nav > ul {
 			flex-direction: row;
 			justify-items: center;
 		}
 	}
-	@media (orientation: landscape) and (min-width: 30em) {
-		nav > ul {
+}
+
+@media (orientation: landscape) and (min-width: 30em) {
+	header{
+		& nav > ul {
 			padding: 0;
 			padding-inline-start: .5em;
 			border-inline-start: 1px dashed;

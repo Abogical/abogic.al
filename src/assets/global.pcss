@@ -1,15 +1,10 @@
-@import 'fontsource-fira-code/index.css';
+@import '@fontsource/fira-code/index.css';
 
 :root {
 	--spin: 0deg;
 	--background: hsl(0deg, 0%, 10%);
 	--foreground: white;
 	--color: hsl(300deg, 20%, 20%);
-	@media (prefers-color-scheme: light) {
-		--background: hsl(0deg, 0%, 90%);
-		--foreground: black;
-		--color: hsl(120deg, 20%, 80%);
-	}
 	border-color: var(--foreground);
 }
 
@@ -30,11 +25,11 @@ footer {
 	margin: 1em;
 	margin-bottom: 0;
 	text-align: center;
-	a {
+	& a {
 		display: inline-block;
 		margin: 1em;
 		white-space: nowrap;
-		svg {
+		& svg {
 			vertical-align: middle;
 			margin-right: 0.25em;
 			width: 1em;
@@ -47,7 +42,7 @@ footer {
 		&:hover,
 		&:active,
 		&:focus {
-			svg {
+			& svg {
 				fill: var(--background);
 			}
 		}
@@ -92,7 +87,7 @@ nav > ul {
 	flex-direction: column;
 	flex-wrap: wrap;
 	align-items: flex-end;
-	li {
+	& li {
 		margin: 0.5rem;
 	}
 	padding: 1rem;
@@ -100,17 +95,25 @@ nav > ul {
 
 .cd-back {
 	position: relative;
-	> svg {
+	& > svg {
 		height: 100%;
 		width: 100%;
 		position: absolute;
 	}
 
-	.shine {
+	& .shine {
 		transform: rotate(var(--spin));
 	}
 
-	* {
+	& * {
 		position: relative;
+	}
+}
+
+@media (prefers-color-scheme: light) {
+	:root {
+		--background: hsl(0deg, 0%, 90%);
+		--foreground: black;
+		--color: hsl(120deg, 20%, 80%);
 	}
 }
