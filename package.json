@@ -9,12 +9,12 @@
 		"build": "mkdirp ./_site/assets ./.cache && cross-env NODE_ENV='production' run-s build:eleventy build:postcss build:rollup build:posthtml",
 		"build:eleventy": "eleventy",
 		"build:postcss": "postcss ./src/assets/*.pcss -d ./_site --ext '.css' --no-map",
-		"build:rollup": "rollup -c",
+		"build:rollup": "rollup -c rollup.config.ts --configPlugin typescript",
 		"build:posthtml": "posthtml -a",
 		"dev": "mkdirp ./_site/assets ./.cache && cross-env NODE_ENV='development' run-p dev:*",
 		"dev:eleventy": "eleventy --serve",
 		"dev:postcss": "postcss ./src/assets/*.pcss -d ./_site --ext '.css' -w",
-		"dev:rollup": "rollup -c -w",
+		"dev:rollup": "rollup -c rollup.config.ts --configPlugin typescript -w",
 		"serve": "sirv _site",
 		"debug": "cross-env DEBUG=* npm run dev",
 		"lint": "xo && prettier --check --ignore-path .gitignore **/*.json",
@@ -32,6 +32,7 @@
 	"license": "AGPL-3.0-or-later",
 	"homepage": "https://abogic.al",
 	"devDependencies": {
+		"@rollup/plugin-typescript": "^8.2.4",
 		"rimraf": "^3.0.2",
 		"sirv-cli": "^1.0.10",
 		"xo": "^0.42.0"

@@ -1,13 +1,13 @@
 const motionQuery = window.matchMedia('(prefers-reduced-motion)');
 
-const listened = {};
+let listened: Record<string, [(event: any) => void, undefined | boolean | EventListenerOptions]> = {};
 
-const addListener = (type, fn, opt) => {
+const addListener = (type: string, fn: (event: any) => void, opt?: undefined | boolean | EventListenerOptions) => {
 	window.addEventListener(type, fn, opt);
 	listened[type] = [fn, opt];
 };
 
-const removeListener = (type, fn, opt) => {
+const removeListener = (type: string, fn: (event: any) => void, opt?: undefined | boolean | EventListenerOptions) => {
 	window.removeEventListener(type, fn, opt);
 	delete listened[type];
 };
@@ -17,6 +17,7 @@ const queryChange = () => {
 		for (const [type, [fn, opt]] of Object.entries(listened)) {
 			window.removeEventListener(type, fn, opt);
 		}
+		listened = {};
 	} else {
 		let updated = true;
 		let x = 0;
@@ -41,20 +42,20 @@ const queryChange = () => {
 			}
 		};
 
-		addListener('mousemove', event => {
+		addListener('mousemove', (event: MouseEvent) => {
 			x = event.clientX;
 			y = event.clientY;
 			update();
 		});
 
-		const setInitAlphaBetaAndGamma = event => {
+		const setInitAlphaBetaAndGamma = (event: DeviceOrientationEvent) => {
 			const initAlpha = event.alpha;
 			const initBeta = event.beta;
 			const initGamma = event.gamma;
 			removeListener('deviceorientation', setInitAlphaBetaAndGamma, true);
 			addListener(
 				'deviceorientation',
-				event => {
+				(event: DeviceOrientationEvent) => {
 					alpha = event.alpha - initAlpha;
 					beta = event.beta - initBeta;
 					gamma = event.gamma - initGamma;
