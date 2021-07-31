@@ -1,4 +1,5 @@
 const htmlnano = require('htmlnano');
+const { extendDefaultPlugins } = require('svgo');
 
 module.exports = {
 	root: '_site',
@@ -12,13 +13,14 @@ module.exports = {
 			...htmlnano.presets.max,
 			collapseWhitespace: 'aggressive',
 			minifySvg: {
-				plugins: [
+				plugins: extendDefaultPlugins([
 					{
-						cleanupIDs: {
+						name: 'cleanupIDs',
+						params: {
 							preserve: ['spoke', 'spokeBorder', 'arcify']
 						}
 					}
-				]
+				])
 			}
 		})
 	]
