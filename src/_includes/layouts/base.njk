@@ -23,24 +23,5 @@ styles: ['global']
   </head>
   <body>
     {{ content | safe }}
-	<footer>
-		<address>
-			<a href='mailto:{{metadata.author.email}}'>
-				{{'Business/mail-fill' | icon | safe}}{{metadata.author.email}}
-			</a>
-			<a target="_blank" href='https://github.com/Abogical'>
-				{{'Logos/github-fill' | icon | safe}}GitHub
-			</a>
-			<a target="_blank" href='https://gitlab.com/Abogical'>
-				{{'Logos/gitlab-fill' | icon | safe}}GitLab
-			</a>
-			<a target="_blank" href='https://linkedin.com/in/Abogical'>
-				{{'Logos/linkedin-box-fill' | icon | safe}}LinkedIn
-			</a>
-			<a href="{{ metadata.feed.path | url }}">
-				{{'Device/rss-fill' | icon | safe}}RSS
-			</a>
-		</address>
-	</footer>
   </body>
 </html>
