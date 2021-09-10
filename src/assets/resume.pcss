@@ -42,6 +42,9 @@
 	padding-block-end: 1em;
 	border-block-end: 1px dashed var(--foreground);
 	text-align: center;
+	& > a {
+		display: inline-block;
+	}
 }
 
 main {
@@ -147,15 +150,15 @@ article{
 		font-size: 9pt;
 	}
 
-	h2 {
+	h2, h2 * {
 		font-size: 15pt;
 	}
 
-	h3 {
+	h3, h3 * {
 		font-size: 13pt;
 	}
 
-	h4 {
+	h4, h4 * {
 		font-size: 11pt;
 	}
 
@@ -164,5 +167,9 @@ article{
 	}
 	#print-button-container {
 		display: none;
+	}
+
+	h4 > a {
+		border-bottom: none
 	}
 }
