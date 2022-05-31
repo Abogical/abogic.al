@@ -1,7 +1,7 @@
 ---
 layout: layouts/post.njk
 title: About Him
-date: 2022-01-17
+date: "git Last Modified"
 image: /assets/me.jpg
 imageAlt: 'Abdelrahman Abdelrahman'
 ---
