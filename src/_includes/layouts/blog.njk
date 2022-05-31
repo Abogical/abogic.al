@@ -5,7 +5,7 @@ scripts: ['post']
 ---
 {%from "macros.njk" import cdback%}
 <nav>
-	{%call cdback('h1')%}<a href='/'>Abdelrahman Abdelrahman</a></h1>{%endcall%}
+	{%call cdback('h1')%}<a href='/'>{{ metadata.title }}</a></h1>{%endcall%}
 	{% include "nav.njk" %}
 </nav>
 
