@@ -1,11 +1,3 @@
-{%macro nav(current, collections)%}
-<ul>
-	<li><a href="/resume">Resume</a></li>
-	<li><a {% if current == '/about/' %} aria-current="page"{% endif %}href="/about">About</a></li>
-	{%if collections.blog.length > 0%}<li><a {% if current == '/blog/' %} aria-current="page"{% endif %}href="/blog">Blog</a></li>{%endif%}
-</ul>
-{%endmacro%}
-
 {%macro cdback(type)%}
 <{{type}} class='cd-back'>
 	<svg viewBox="-102.5 -102.5 205 205" aria-hidden='true' class='cd' alt='CD ICON'>

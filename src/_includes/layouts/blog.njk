@@ -3,10 +3,10 @@ layout: layouts/withFooter.njk
 styles: ['post']
 scripts: ['post']
 ---
-{%from "macros.njk" import nav, cdback%}
+{%from "macros.njk" import cdback%}
 <nav>
 	{%call cdback('h1')%}<a href='/'>Abdelrahman Abdelrahman</a></h1>{%endcall%}
-	{{ nav(page.url, collections) }}
+	{% include "nav.njk" %}
 </nav>
 
 <main>

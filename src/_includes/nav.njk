@@ -1,0 +1,5 @@
+<ul>
+	<li><a href="/resume">Resume</a></li>
+	<li><a {% if page.url == '/about/' %} aria-current="page"{% endif %}href="/about">About</a></li>
+	{%if collections.blog.length > 0%}<li><a {% if page.url == '/blog/' %} aria-current="page"{% endif %}href="/blog">Blog</a></li>{%endif%}
+</ul>

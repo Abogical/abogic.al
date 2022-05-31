@@ -4,7 +4,7 @@ styles:
  - index
 scripts: ['index']
 ---
-{%from "macros.njk" import nav, cdback%}
+{% from "macros.njk" import cdback %}
 
 {%call cdback('div') %}
 	<header>
@@ -13,7 +13,7 @@ scripts: ['index']
 			<em>Full Stack Developer</em>
 		</section>
 		<nav>
-			{{ nav('/', collections) }}
+			{% include "nav.njk" %}
 		</nav>
 	</header>
 {%endcall%}
