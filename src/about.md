@@ -2,9 +2,6 @@
 layout: layouts/post.njk
 title: About Him
 date: 2022-01-17
-eleventyNavigation:
-	key: About
-	order: 1
 image: /assets/me.jpg
 imageAlt: 'Abdelrahman Abdelrahman'
 ---
