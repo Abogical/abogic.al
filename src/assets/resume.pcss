@@ -25,7 +25,7 @@
 		}
 		& > :last-child {
 			padding-inline-start: 1em;
-		}	
+		}
 	}
 }
 
@@ -73,17 +73,25 @@ table {
 			text-align: end;
 			padding-inline-end: 1em;
 			border-inline-end: 1px dashed var(--foreground);
+			border-block-start: 1px dashed var(--foreground);
 			font-weight: bold;
 			width: 7.5vw;
+			font-size: small;
+			& > ul {
+				justify-content: end;
+				& > li {
+					margin: 0;
+					border: none;
+				}
+			}
 		}
 		&:nth-child(2) {
 			padding-inline-start: 1em;
 		}
-		vertical-align: top;
 		padding-bottom: 1em;
 		& p {
 			margin: 0;
-			& > a, & .breakable {
+			& > a {
 				word-break: break-all;
 			}
 		}
@@ -92,6 +100,9 @@ table {
 		padding-bottom: 0;
 	}
 	margin-top: 1em;
+	& tr:first-child td:first-child {
+		border-block-start: none;
+	}
 }
 
 h4 {
@@ -139,7 +150,7 @@ article{
 		--background: white;
 		--foreground: black;
 	}
-	
+
 	header h1 {
 		font-size: 25pt;
 		&+em{
@@ -156,11 +167,11 @@ article{
 	}
 
 	h3, h3 * {
-		font-size: 13pt;
+		font-size: 12pt;
 	}
 
 	h4, h4 * {
-		font-size: 11pt;
+		font-size: 10pt;
 	}
 
 	address a {
@@ -176,5 +187,12 @@ article{
 
 	@page {
 		size: A4 portrait;
+	}
+
+	table td:first-child {
+		& * {
+			font-size: 6pt;
+		}
+		font-size: 6pt;
 	}
 }

@@ -1,12 +1,12 @@
 ---
 layout: layouts/post.njk
 title: About Him
-date: 2022-02-04
+date: 2023-01-10
 image: /assets/me.jpg
 imageAlt: 'Abdelrahman Abdelrahman'
 ---
 
-Abdelrahman Abdelrahman is a creator of websites & desktop apps. Burning the candles at both the front and the back-end. The laundry list of his skills has been collected under this [resume](/resume). Currently residing in Alexandria, Egypt.
+Abdelrahman Abdelrahman is a creator of websites & desktop apps. Burning the candles at both the front and the back-end. The laundry list of his skills has been collected under this [resume](/resume). Currently residing in St. John's, NL, Canada.
 
 <svg viewBox="-102.5 -102.5 205 205" class='float-start circle' alt='CD ICON'>
 	<circle fill="var(--foreground)" r="5"/>
@@ -26,6 +26,6 @@ Abdelrahman Abdelrahman is a creator of websites & desktop apps. Burning the can
 
 ## Abogical
 
-The name and CD icon is a relic of his [LittleBigPlanet days](https://web.archive.org/web/20121103084209/https://lbp.me/u/abody_xplay1). Creating LittleBigPlanet games with _logic_ gates in the game under the pseudonym _'Abogical'_. The name stuck by long after. 
+The name and CD icon is a relic of his [LittleBigPlanet days](https://web.archive.org/web/20121103084209/https://lbp.me/u/abody_xplay1). Creating LittleBigPlanet games with _logic_ gates in the game under the pseudonym _'Abogical'_. The name stuck by long after.
 
 His ramblings has been gathered as a blog at this site. Contact him if you're curious with the links below.
