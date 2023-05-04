@@ -64,6 +64,8 @@ header {
 		align-items: flex-start;
 		flex-wrap: wrap;
 	}
+
+    border-block-end: 1px dashed var(--foreground);;
 }
 
 table {
@@ -78,10 +80,12 @@ table {
 			width: 7.5vw;
 			font-size: small;
 			& > ul {
+                margin: 0;
+                padding: 0;
 				justify-content: end;
 				& > li {
+	                list-style: none;
 					margin: 0;
-					border: none;
 				}
 			}
 		}
@@ -124,19 +128,21 @@ h4 + p{
 	margin-top: 0;
 }
 
-ul {
-	padding: 0;
-	margin: 0;
-	display: flex;
-	flex-wrap: wrap;
-}
+#skills {
+    & ul {
+        padding: 0;
+        margin: 0;
+        display: flex;
+        flex-wrap: wrap;    
+    }
 
-li {
-	display: inline-block;
-	list-style: none;
-	padding: .25em;
-	border: 1px dashed var(--foreground);
-	margin: .25em;
+    & li {
+        display: inline-block;
+        list-style: none;
+        padding: .25em;
+        border: 1px dashed var(--foreground);
+        margin: .25em;
+    }
 }
 
 article{
@@ -187,6 +193,7 @@ article{
 
 	@page {
 		size: A4 portrait;
+        margin: 1em;
 	}
 
 	table td:first-child {
