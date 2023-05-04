@@ -17,6 +17,9 @@ styles: ['resume']
 <a href='mailto:{{metadata.author.email}}'>
 	{{'Business/mail-fill' | icon | safe}}{{metadata.author.email}}
 </a>
+{% if metadata.author.phone %}
+<a href="tel:{{metadata.author.phone}}">{{"Device/phone-fill" | icon | safe}}{{metadata.author.phone}}</a>
+{%endif%}
 <a target="_blank" href='https://github.com/Abogical'>
 	{{'Logos/github-fill' | icon | safe}}github.com/Abogical
 </a>

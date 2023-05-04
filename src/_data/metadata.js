@@ -1,4 +1,4 @@
-{
+module.exports = () => ({
 	"title": "Abdelrahman Abdelrahman",
 	"url": "https://abogic.al/",
 	"description": "Abdelrahman Abdelrahman's personal site.",
@@ -7,6 +7,7 @@
 	},
 	"author": {
 		"name": "Abdelrahman Abdelrahman",
-		"email": "me@abogic.al"
+		"email": "me@abogic.al",
+        "phone": process.env.AUTHOR_PHONE
 	}
-}
+})
