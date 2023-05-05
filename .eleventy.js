@@ -74,6 +74,9 @@ module.exports = function (eleventyConfig) {
 		ghostMode: false
 	});
 
+    if(process.env.NODE_ENV === 'production')
+        eleventyConfig.ignores.add("cover-letter.njk")
+
 	return {
 		templateFormats: ['md', 'njk', 'html', 'liquid', 'pdf'],
 
