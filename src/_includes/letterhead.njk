@@ -9,7 +9,9 @@
 	{{'Business/mail-fill' | icon | safe}}{{metadata.author.email}}
 </a>
 {% if metadata.author.phone %}
-<a href="tel:{{metadata.author.phone}}">{{"Device/phone-fill" | icon | safe}}{{metadata.author.phone}}</a>
+<a href="tel:{{metadata.author.phone}}">
+    {{"Device/phone-fill" | icon | safe}}{{metadata.author.phone}}
+</a>
 {%endif%}
 
 <a target="_blank" href="https://en.wikipedia.org/wiki/St._John's,_Newfoundland_and_Labrador">
