@@ -7,6 +7,7 @@ module.exports = () => ({
 	},
 	"author": {
 		"name": "Abdelrahman Abdelrahman",
+        "role": process.env.AUTHOR_ROLE || "Software Developer",
 		"email": process.env.AUTHOR_EMAIL || "abdelrahmana@mun.ca",
         "phone": process.env.AUTHOR_PHONE,
         "location": "St. John's, <abbr title=\"Newfoundland and Labrador\">NL</abbr>, Canada"
