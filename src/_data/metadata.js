@@ -1,12 +1,13 @@
 module.exports = () => ({
-	"title": "Abdelrahman Abdelrahman",
+	"title": "Abdel-Rahman Abdel-Rahman",
 	"url": "https://abogic.al/",
-	"description": "Abdelrahman Abdelrahman's personal site.",
+	"description": "Abdel-Rahman's personal site.",
 	"feed": {
 		"path": "/feed/feed.xml"
 	},
 	"author": {
-		"name": "Abdelrahman Abdelrahman",
+        "htmlName": "<span class='no-break'>Abdel-Rahman</span> <span class='no-break'>Abdel-Rahman</span>",
+		"name": "Abdel-Rahman Abdel-Rahman",
         "role": process.env.AUTHOR_ROLE || "Software Developer",
 		"email": process.env.AUTHOR_EMAIL || "abdelrahmana@mun.ca",
         "phone": process.env.AUTHOR_PHONE,

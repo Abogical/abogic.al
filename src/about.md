@@ -7,7 +7,7 @@ imageAlt: 'Abdelrahman Abdelrahman'
 templateEngineOverride: njk,md
 ---
 
-Abdelrahman Abdelrahman is a creator of websites & desktop apps. Burning the candles at both the front and the back-end. The laundry list of his skills has been collected under this [resume](/resume). Currently residing in <a target="_blank" href="https://en.wikipedia.org/wiki/St._John's,_Newfoundland_and_Labrador">{{metadata.author.location | safe}}.</a>
+{{metadata.author.name}} is a creator of websites & desktop apps. Burning the candles at both the front and the back-end. The laundry list of his skills has been collected under this [resume](/resume). Currently residing in <a target="_blank" href="https://en.wikipedia.org/wiki/St._John's,_Newfoundland_and_Labrador">{{metadata.author.location | safe}}.</a>
 
 <svg viewBox="-102.5 -102.5 205 205" class='float-start circle' alt='CD ICON'>
 	<circle fill="var(--foreground)" r="5"/>

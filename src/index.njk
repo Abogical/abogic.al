@@ -9,7 +9,7 @@ scripts: ['index']
 {%call cdback('div') %}
 	<header>
 		<section>
-			<h1>{{ metadata.title }}</h1>
+			<h1>{{ metadata.author.htmlName | safe}}</h1>
 			<em>{{ metadata.author.role }}</em>
 		</section>
 		<nav>
