@@ -31,13 +31,18 @@ address {
 	}
 }
 
-a, button, .button {
-	& svg {
+a, button, .button, address > article {
+    & svg {
 		vertical-align: middle;
 		margin-right: 0.25em;
 		width: 1em;
 		height: 1em;
 		fill: var(--foreground);
+    }
+}
+
+a, button, .button {
+	& svg {
 		transition-duration: 0.2s;
 		transition-property: fill;
 	}
@@ -72,10 +77,13 @@ button, .button {
 	}
 }
 
-a, button, .button {
+a, button, .button, address > article {
 	text-decoration: none;
 	font-weight: bold;
 	color: var(--foreground);
+}
+
+a, button, .button {
 	border-bottom: 1px solid;
 	background-image: linear-gradient(to top, var(--foreground) 0 100%);
 	background-repeat: no-repeat;
