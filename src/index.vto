@@ -1,0 +1,20 @@
+---
+layout: layouts/base.vto
+styles:
+    - assets/index.css
+scripts:
+    - assets/index.js
+metas:
+    title: Abdel's site
+---
+{{ layout "layouts/cdback.vto" {type: "div"}}}
+    <header>
+		<section>
+			<h1>{{ author.htmlName }}</h1>
+			<em>{{ author.role }}</em>
+		</section>
+		<nav>
+            {{ include "layouts/nav.vto" }}
+		</nav>
+	</header>
+{{ /layout }}

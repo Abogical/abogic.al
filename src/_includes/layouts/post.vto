@@ -1,0 +1,12 @@
+---
+layout: layouts/blog.vto
+---
+{{ if image }}
+    <img id="header-image" src="{{image}}" width="300" height="300" {{if imageAlt}}alt="{{imageAlt}}"{{/if}}
+        transform-images="avif webp jpg 300@2" loading="lazy"/>
+{{ /if }}
+<header>
+<h1>{{ title }}</h1>
+{{ include "layouts/relativeDate.vto" }}
+</header>
+{{ content }}

@@ -1,4 +1,4 @@
-import('date-fns').then(({formatDistance}) => {
+import('npm:date-fns').then(({formatDistance}) => {
 	window.addEventListener('load', () => {
 		for (const element of document.querySelectorAll('.format-date')) {
 			const elementDate = new Date(element.getAttribute('datetime'));

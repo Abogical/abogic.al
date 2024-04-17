@@ -1,0 +1,37 @@
+<header>
+
+<h1>{{metas.author}}</h1>
+<em id='role'>{{author.role}}</em>
+
+<address>
+<a href="https://abogic.al"><i class="ri-links-fill"></i>abogic.al</a>
+<a href='mailto:{{author.email}}'>
+	<i class="ri-mail-fill"></i>{{author.email}}
+</a>
+{{ if author.phone }}
+<a href="tel:{{author.phone}}">
+    <i class="ri-phone-fill"></i>{{author.phone}}
+</a>
+{{ /if }}
+
+<a target="_blank" href='https://github.com/Abogical'>
+	<i class="ri-github-fill"></i>github.com/Abogical
+</a>
+{{# <a target="_blank" href='https://gitlab.com/Abogical'>
+	<i class="ri-gitlab-fill"></i>gitlab.com/Abogical
+</a> #}}
+<a target="_blank" href='https://linkedin.com/in/Abogical'>
+	<i class="ri-linkedin-box-fill"></i>linkedin.com/in/Abogical
+</a>
+
+{{# <a id='html-resume-link' href='https://abogic.al/resume'>
+    <i class="ri-html5-fill"></i>This resume is in <b>HTML</b>! See abogic.al/resume
+</a> #}}
+
+
+<article>
+    <i class="ri-map-pin-fill"></i>{{author.location}}
+</article>
+
+</address>
+</header>
