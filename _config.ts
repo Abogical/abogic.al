@@ -65,7 +65,8 @@ const buildResumePDF = async () => {
     await page.goto('http://127.0.0.1:3000/resume/');
     await page.pdf({
         path: '_site/resume.pdf',
-        format: 'A4'
+        format: 'A4',
+        pageRanges: '1'
     })
     await browser.close();
     console.log('PDF resume built')

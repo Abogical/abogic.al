@@ -137,9 +137,10 @@ ul {
     display: grid;
     grid-template-columns: 1fr 1fr;
     grid-template-rows: 1fr 1fr;
+    gap: .375em;
     & ul {
         padding: 0;
-        margin: .5em;
+        margin: 0;
         display: flex;
         flex-wrap: wrap;
         font-family: 'Roboto Slab', serif;
@@ -169,7 +170,7 @@ article{
 	header h1 {
 		font-size: 25pt;
 		&+em{
-			font-size: 16pt;
+			font-size: 15pt;
 		}
 	}
 
@@ -178,7 +179,7 @@ article{
 	}
 
 	h2, h2 * {
-		font-size: 16pt;
+		font-size: 15pt;
 	}
 
 	h3, h3 * {
@@ -208,7 +209,7 @@ article{
 
 	@page {
 		size: A4 portrait;
-        margin: 0.8em;
+        margin: 0.5em;
 	}
 
     abbr{
