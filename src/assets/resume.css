@@ -82,6 +82,12 @@ main {
     }
 }
 
+@media screen and (width <= 50em) {
+    main .role {
+        grid-template-columns: 1fr;
+    }
+}
+
 header {
 	& h1 {
 		margin: 0;
