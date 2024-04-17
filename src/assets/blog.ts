@@ -1,8 +1,11 @@
-import('npm:date-fns').then(({formatDistance}) => {
+import('npm:date-fns').then(({ formatDistance }) => {
 	window.addEventListener('load', () => {
 		for (const element of document.querySelectorAll('.format-date')) {
 			const elementDate = new Date(element.getAttribute('datetime'));
-			element.insertAdjacentText('afterend', ` (${formatDistance(elementDate, new Date())} ago)`);
+			element.insertAdjacentText(
+				'afterend',
+				` (${formatDistance(elementDate, new Date())} ago)`,
+			);
 			element.innerHTML = elementDate.toLocaleDateString();
 		}
 	});
@@ -11,7 +14,10 @@ import('npm:date-fns').then(({formatDistance}) => {
 let updated = true;
 
 const updateSpin = () => {
-	document.documentElement.style.setProperty('--spin', `${document.documentElement.scrollTop / 4}deg`);
+	document.documentElement.style.setProperty(
+		'--spin',
+		`${document.documentElement.scrollTop / 4}deg`,
+	);
 	updated = true;
 };
 

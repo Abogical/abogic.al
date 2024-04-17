@@ -1,13 +1,24 @@
 const motionQuery = window.matchMedia('(prefers-reduced-motion)');
 
-let listened: Record<string, [(event: any) => void, undefined | boolean | EventListenerOptions]> = {};
+let listened: Record<
+	string,
+	[(event: any) => void, undefined | boolean | EventListenerOptions]
+> = {};
 
-const addListener = (type: string, fn: (event: any) => void, opt?: undefined | boolean | EventListenerOptions) => {
+const addListener = (
+	type: string,
+	fn: (event: any) => void,
+	opt?: undefined | boolean | EventListenerOptions,
+) => {
 	window.addEventListener(type, fn, opt);
 	listened[type] = [fn, opt];
 };
 
-const removeListener = (type: string, fn: (event: any) => void, opt?: undefined | boolean | EventListenerOptions) => {
+const removeListener = (
+	type: string,
+	fn: (event: any) => void,
+	opt?: undefined | boolean | EventListenerOptions,
+) => {
 	window.removeEventListener(type, fn, opt);
 	delete listened[type];
 };
@@ -33,9 +44,13 @@ const queryChange = () => {
 					document.documentElement.style.setProperty(
 						'--spin',
 						`${
-							(180 / Math.PI) * Math.atan2(window.innerHeight / 2 - y, window.innerWidth / 2 - x) +
+							(180 / Math.PI) *
+								Math.atan2(
+									window.innerHeight / 2 - y,
+									window.innerWidth / 2 - x,
+								) +
 							(alpha + beta + gamma) * 4
-						}deg`
+						}deg`,
 					);
 					updated = true;
 				});
@@ -61,7 +76,7 @@ const queryChange = () => {
 					gamma = event.gamma - initGamma;
 					update();
 				},
-				true
+				true,
 			);
 		};
 
