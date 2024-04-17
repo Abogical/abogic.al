@@ -1,0 +1,42 @@
+---
+footer: true
+styles: []
+---
+<!doctype html>
+<html lang="en" dir="ltr">
+  <head>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/firacode@6.2.0/distr/fira_code.css">
+    <link
+        href="https://cdn.jsdelivr.net/npm/remixicon@4.2.0/fonts/remixicon.css"
+        rel="stylesheet"
+    />
+	{{ for style of ["/assets/global.css", ...styles] }}
+		<link rel="stylesheet" href="{{style |> url}}"/>
+	{{ /for }}
+	{{ for script of scripts }}
+		<script async src="{{script |> url}}" type='module'></script>
+	{{ /for }}
+    <title>{{ metas.title }}</title>
+  </head>
+  <body>
+    {{ content }}
+    {{ if footer }}
+        <footer>
+            <address>
+                <a href='mailto:{{author.email}}'>
+                    <i class="ri-mail-fill"></i>{{ author.email }}
+                </a>
+                <a target="_blank" href='https://github.com/Abogical'>
+                     <i class="ri-github-fill"></i>GitHub
+                </a>
+                <a target="_blank" href='https://gitlab.com/Abogical'>
+                    <i class="ri-gitlab-fill"></i>GitLab
+                </a>
+                <a target="_blank" href='https://linkedin.com/in/Abogical'>
+                    <i class="ri-linkedin-box-fill"></i>LinkedIn
+                </a>
+            </address>
+        </footer>
+    {{ /if }}
+  </body>
+</html>

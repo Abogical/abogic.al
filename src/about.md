@@ -1,13 +1,13 @@
 ---
-layout: layouts/post.njk
+layout: layouts/post.vto
 title: About Him
-date: 2023-01-10
-image: /assets/me.jpg
-imageAlt: 'Abdelrahman Abdelrahman'
-templateEngineOverride: njk,md
+metas:
+    title: About Abdel-Rahman
+templateEngine: [vto, md]
+image: /img/me.jpg
 ---
 
-{{metadata.author.name}} is a creator of websites & desktop apps. Burning the candles at both the front and the back-end. The laundry list of his skills has been collected under this [resume](/resume). Currently residing in {{metadata.author.location | safe}}.
+{{ metas.author }} is a creator of websites & desktop apps. Burning the candles at both the front and the back-end. The laundry list of his skills has been collected under this [resume](/resume). Currently residing in {{ author.location }}.
 
 <svg viewBox="-102.5 -102.5 205 205" class='float-start circle' alt='CD ICON'>
 	<circle fill="var(--foreground)" r="5"/>

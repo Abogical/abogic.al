@@ -1,0 +1,17 @@
+---
+layout: layouts/base.vto
+styles:
+    - assets/blog.css
+scripts:
+    - assets/blog.js
+---
+<nav>
+    {{ layout "layouts/cdback.vto" { type: "h1" } }}
+	    <a href='/'>{{ author.htmlName }}</a>
+    {{ /layout }}
+	{{ include "layouts/nav.vto" }}
+</nav>
+
+<main>
+	{{ content }}
+</main>

@@ -1,5 +1,7 @@
-@import '@fontsource/fira-code/index.css';
-@import '@fontsource/roboto-slab/index.css';
+@font-face {
+    font-family: 'Roboto Slab';
+    src: url('/external/roboto-slab.ttf');
+}
 
 :root {
 	--spin: 0deg;
@@ -32,12 +34,11 @@ address {
 }
 
 a, button, .button, address > article {
-    & svg {
-		vertical-align: middle;
+    & i {
+		vertical-align: top;
 		margin-right: 0.25em;
 		width: 1em;
 		height: 1em;
-		fill: var(--foreground);
     }
 }
 
@@ -79,7 +80,7 @@ button, .button {
 
 a, button, .button, address > article {
 	text-decoration: none;
-	font-weight: bold;
+	font-weight: 600;
 	color: var(--foreground);
 }
 
@@ -110,6 +111,10 @@ html {
 	margin: 0;
 	color: var(--foreground);
 	background-color: var(--background);
+}
+
+h1 {
+    font-weight: 500;
 }
 
 nav > ul {
