@@ -8,6 +8,7 @@ const author = {
 };
 
 export default {
+    "date": "Git Last Modified",
     "metas": {
         "site": "Abdel's site",
         "lang": "en",
