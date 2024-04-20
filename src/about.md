@@ -35,5 +35,7 @@ The name and CD icon is a relic of his
 Creating LittleBigPlanet games with _logic_ gates in the game under the
 pseudonym _'Abogical'_. The name stuck by long after.
 
-His ramblings has been gathered as a blog at this site. Contact him if you're
-curious with the links below.
+## About this website
+He made this website with the [Deno](https://deno.land) static site generator [Lume](https://lume.land), [PostCSS](https://postcss.org/), and icons from [Remix Icon](https://remixicon.com/). Source code of this website is available at [gitlab.com/Abogical/abogical](https://gitlab.com/Abogical/abogical)
+
+His ramblings will be gathered as a blog at this site. Contact him if you're curious with the links below.
