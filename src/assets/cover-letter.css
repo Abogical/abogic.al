@@ -1,0 +1,15 @@
+main {
+    justify-items: center;
+}
+
+main > div {
+    width: 80ch;
+}
+
+#sign, #letter-header {
+    font-style: italic;
+}
+
+#sign > p {
+    margin: 0;
+}

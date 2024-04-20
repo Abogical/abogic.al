@@ -4,7 +4,7 @@
 	},
 	"tasks": {
 		"lume": "echo \"import 'lume/cli.ts'\" | deno run -A -",
-		"build": "TERMINATE_AFTER_BUILD=1 deno task lume -s",
+		"build": "BUILD_MODE=1 deno task lume -s",
 		"serve": "deno task lume -s"
 	},
 	"compilerOptions": {

@@ -18,6 +18,7 @@ import cssnano from 'npm:cssnano';
 import postCssPresetEnv from 'npm:postcss-preset-env';
 import puppeteer from 'https://deno.land/x/puppeteer@16.2.0/mod.ts';
 import minifyHTML from 'lume/plugins/minify_html.ts';
+import { formatISO } from 'npm:date-fns';
 
 const portStr = Deno.env.get('port');
 const port = portStr ? parseInt(portStr) : 3000;
@@ -57,6 +58,11 @@ site.use(sourceMaps());
 
 site.copy('external');
 
+site.filter('isoDate', date => formatISO(date, {representation: 'date'}));
+
+if(Deno.env.get('BUILD_MODE'))
+    site.ignore('cover-letter.md');
+
 const buildResumePDF = async () => {
 	console.log('building PDF resume');
 	const browser = await puppeteer.launch();
@@ -69,7 +75,7 @@ const buildResumePDF = async () => {
 	});
 	await browser.close();
 	console.log('PDF resume built');
-	if (Deno.env.get('TERMINATE_AFTER_BUILD')) {
+	if (Deno.env.get('BUILD_MODE')) {
 		Deno.exit();
 	}
 };
