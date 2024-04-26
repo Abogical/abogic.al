@@ -62,6 +62,15 @@ site.copy(['.pdf'])
 
 site.filter('isoDate', date => formatISO(date, {representation: 'date'}));
 
+// Metas plugin bug fix, where the links are incorrectly localhost.
+site.process(['.html'], (pages) => {
+    for(const page of pages){
+        for(const meta of page.document!.querySelectorAll('[property="og:image"], [property="og:url"]')){
+            meta.setAttribute('content', meta.getAttribute('content')!.replace('http://localhost:3000', 'https://abogic.al'))
+        }
+    }
+})
+
 if(Deno.env.get('BUILD_MODE'))
     site.ignore('cover-letter.md');
 
