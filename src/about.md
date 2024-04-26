@@ -3,6 +3,7 @@ layout: layouts/post.vto
 title: About Him
 metas:
     title: About Abdel-Rahman
+    image: /img/me.jpg
 templateEngine: [vto, md]
 image: /img/me.jpg
 ---

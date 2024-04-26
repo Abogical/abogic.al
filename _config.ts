@@ -16,8 +16,9 @@ import sourceMaps from 'lume/plugins/source_maps.ts';
 import postcss from 'lume/plugins/postcss.ts';
 import cssnano from 'npm:cssnano';
 import postCssPresetEnv from 'npm:postcss-preset-env';
-import puppeteer from 'https://deno.land/x/puppeteer@16.2.0/mod.ts';
+import puppeteer, { Browser } from 'https://deno.land/x/puppeteer@16.2.0/mod.ts';
 import minifyHTML from 'lume/plugins/minify_html.ts';
+import { join } from "https://deno.land/std@0.207.0/path/join.ts";
 import { formatISO } from 'npm:date-fns';
 
 const portStr = Deno.env.get('port');
@@ -64,36 +65,67 @@ site.filter('isoDate', date => formatISO(date, {representation: 'date'}));
 if(Deno.env.get('BUILD_MODE'))
     site.ignore('cover-letter.md');
 
-const buildResumePDF = async () => {
-	console.log('building PDF resume');
+const buildResumePDF = async (browser: Browser) => {
+    const page = await browser.newPage();
+    await page.goto('http://127.0.0.1:3000/resume/');
+    await page.pdf({
+        path: '_site/resume.pdf',
+        format: 'A4',
+        pageRanges: '1',
+    });
+    await page.close();
+}
+
+const screenshotPage = async (browser: Browser, url: string, destination: string) => {
+    const page = await browser.newPage();
+    await page.setViewport({
+        width: 600,
+        height: 300
+    });
+    await page.goto(join('http://127.0.0.1:3000', url))
+    await page.screenshot({
+        path: join('_site', destination)
+    })
+    await page.close();
+}
+
+const puppeteerTasks = async () => {
+	console.log('Running puppeteer tasks');
 	const browser = await puppeteer.launch();
-	const page = await browser.newPage();
-	await page.goto('http://127.0.0.1:3000/resume/');
-	await page.pdf({
-		path: '_site/resume.pdf',
-		format: 'A4',
-		pageRanges: '1',
-	});
+
+    const tasks = []
+    tasks.push(buildResumePDF(browser));
+    const screenshots_urls = [];
+
+    for(const page of site.pages){
+        if('screenshot' in page.data){
+            tasks.push(screenshotPage(browser, page.data.url, page.data.screenshot));
+            screenshots_urls.push(page.data.url);
+        }
+    }
+	
+    await Promise.all(tasks);
 	await browser.close();
-	console.log('PDF resume built');
+	console.log('Puppeteer tasks done');
 	if (Deno.env.get('BUILD_MODE')) {
+        await Promise.all(screenshots_urls.map(url => Deno.remove(join('_site', url), {recursive: true})));
 		Deno.exit();
 	}
 };
 
-site.addEventListener('afterStartServer', buildResumePDF);
+site.addEventListener('afterStartServer', puppeteerTasks);
 
-const resumeFiles = new Set([
+const puppeteerFiles = new Set([
 	'/resume/',
 	'/assets/resume.css',
-	'/assets/global.css',
+	'/assets/global.css'
 ]);
 site.addEventListener('afterUpdate', (event) => {
-	for (const page of event.pages) {
-		if (resumeFiles.has(page.data.url)) {
-			buildResumePDF();
+	for (const page of event.pages)
+		if (puppeteerFiles.has(page.data.url) || 'screenshot' in page.data) {
+			puppeteerTasks();
+            break;
 		}
-	}
 });
 
 export default site;

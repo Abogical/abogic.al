@@ -1,0 +1,13 @@
+---
+layout: layouts/base.vto
+footer: false
+styles:
+    - assets/index-og-image.css 
+screenshot: 'index.png'
+---
+{{ layout "layouts/cdback.vto" {type: "div"}}}
+    <header>
+        <h1>{{ author.htmlName }}</h1>
+		<em>{{ author.role }}</em>
+    </header>
+{{ /layout }}

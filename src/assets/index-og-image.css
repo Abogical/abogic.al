@@ -1,0 +1,16 @@
+html {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+
+header {
+    padding: 2em;
+    font-size: x-large;
+}
+
+h1 {
+    width: min-content;
+    font-size: xxx-large;
+    margin: 0;
+}
