@@ -104,7 +104,9 @@ const puppeteerTasks = async () => {
 
     const tasks = []
     tasks.push(buildResumePDF(browser));
-    const screenshots_urls = [];
+    const screenshots_urls = [
+        '/assets/index-og-image.css'
+    ];
 
     for(const page of site.pages){
         if('screenshot' in page.data){
