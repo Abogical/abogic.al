@@ -1,6 +1,6 @@
 [build]
   publish = "_site"
-  command = "PUPPETEER_PRODUCT=chrome deno run -A --unstable https://deno.land/x/puppeteer@16.2.0/install.ts && deno task build"
+  command = "deno run --allow-all npm:puppeteer browsers install chrome && deno task build"
 
 [[headers]]
   for = "/*"
