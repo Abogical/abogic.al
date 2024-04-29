@@ -16,7 +16,7 @@ import sourceMaps from 'lume/plugins/source_maps.ts';
 import postcss from 'lume/plugins/postcss.ts';
 import cssnano from 'npm:cssnano';
 import postCssPresetEnv from 'npm:postcss-preset-env';
-import puppeteer, { Browser } from 'https://deno.land/x/puppeteer@16.2.0/mod.ts';
+import puppeteer, { Browser } from 'npm:puppeteer';
 import minifyHTML from 'lume/plugins/minify_html.ts';
 import { join } from "https://deno.land/std@0.207.0/path/join.ts";
 import { formatISO } from 'npm:date-fns';
@@ -77,16 +77,18 @@ if(Deno.env.get('BUILD_MODE'))
 const buildResumePDF = async (browser: Browser) => {
     const page = await browser.newPage();
     await page.goto('http://127.0.0.1:3000/resume/');
-    await page.pdf({
-        path: '_site/resume.pdf',
+    await Deno.writeFile('_site/resume.pdf', await page.pdf({
         format: 'A4',
         pageRanges: '1',
-    });
+    }));
     await page.close();
 }
 
 const screenshotPage = async (browser: Browser, url: string, destination: string) => {
     const page = await browser.newPage();
+    await page.emulateMediaFeatures([
+        {name: 'prefers-color-scheme', value: 'light'},
+    ]);
     await page.setViewport({
         width: 600,
         height: 300
@@ -137,6 +139,10 @@ site.addEventListener('afterUpdate', (event) => {
 			puppeteerTasks();
             break;
 		}
+});
+
+Deno.addSignalListener("SIGINT", () => {
+    Deno.exit();
 });
 
 export default site;
