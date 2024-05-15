@@ -161,6 +161,7 @@ h2, h3 {
 
 h2 {
     margin-top: .25em;
+    border-bottom: 1px solid;
 }
 
 h3 {
