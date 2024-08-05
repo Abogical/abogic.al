@@ -8,3 +8,7 @@
     X-Frame-Options = "DENY"
     X-XSS-Protection = "1; mode=block"
     X-Content-Type-Options = "nosniff"
+
+[[redirects]]
+  from = "/symconstraints"
+  to = "https://abogical.github.io/symconstraints/"
