@@ -57,9 +57,12 @@ main {
             grid-column: 2 / 3;
         }
 
-        & + .compressed {
+		&:nth-of-type(odd) {
+			padding-inline-end: 1em;
+		}
+
+        &:nth-of-type(even) {
             padding-inline-start: 1em;
-            margin-inline-start: 1em;
             border-inline-start: 1px dashed;
         }
     }
@@ -115,7 +118,7 @@ main {
             grid-column: 2 / 3;
         }
 
-        & > .compressed + .compressed {
+        & > .compressed:nth-of-type(n){
             margin: 0;
             padding: 0;
             border: none;
@@ -253,6 +256,6 @@ article{
 	}
 
     abbr{
-       text-decoration: none; 
+       text-decoration: none;
     }
 }
