@@ -2,9 +2,9 @@ const author = {
 	'name': 'Abdel-Rahman Abdel-Rahman',
 	'htmlName':
 		"<span class='no-break'>Abdel-Rahman</span> <span class='no-break'>Abdel-Rahman</span>",
-	'role': 'Software Developer',
+	'role': Deno.env.get('AUTHOR_ROLE') || 'Software Developer',
 	'email': Deno.env.get('AUTHOR_EMAIL') || 'abogical@gmail.com',
-	'location': 'Canada',
+	'location': Deno.env.get('AUTHOR_LOCATION') || 'Calgary, AB, Canada',
 	'phone': Deno.env.get('AUTHOR_PHONE'),
 };
 
