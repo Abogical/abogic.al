@@ -266,4 +266,10 @@ article{
     abbr{
        text-decoration: none;
     }
+
+	sup {
+		font-size: 0.75em;
+		vertical-align: top;
+		line-height: 1;
+	}
 }

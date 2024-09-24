@@ -26,9 +26,10 @@ styles:
     </address>
 </div>
 <ul class="text-body summary">
-    <li>Developed a regression model to estimate ship stability, improving ship safety.</li>
-    <li>Utilized <b>Python</b> and <b>Pandas</b> for preprocessing and employed <b>scikit-learn</b> for learning tasks on an AWS SageMaker Notebook.</li>
-    <li>Achieved an accuracy of 85&ndash;99%.</li>
+    <li>Developed a regression model to estimate ship stability parameters, improving ship safety during its trips as part of the DUKC system.</li>
+    <li>Utilized <b>Python</b> and <b>Pandas</b> for preprocessing and employed <b>scikit-learn</b> for learning tasks on an <b>AWS SageMaker</b> instance.</li>
+	<li>Created an additional quantile model that predicts a range of values within 95% confidence.</li>
+    <li>Achieved an R<sup>2</sup> prediction accuracy of 80&ndash;99% with the developed model, with a residual standard deviation of less than 0.87 meters.</li>
 </ul>
 </article>
 <article>
@@ -43,9 +44,10 @@ styles:
     </address>
 </div>
 <ul class='text-body summary'>
-    <li>Developed interactive content for a Kubernetes educational platform.</li>
-    <li>Created user interfaces via <b>React</b>, <b>TypeScript</b> backed by a <b>NodeJS</b> and <b>Express</b> backend.</li>
-    <li>Created a reproducible <b>Bazel</b> build system and reduced the build times by 3&ndash;4 times.</li>
+    <li>Developed interactive webpages for an educational platform teaching Kubernetes courses.</li>
+    <li>Created frontend user interfaces via <b>React</b>, <b>TypeScript</b> backed by a <b>NodeJS</b> and <b>Express</b> backend.</li>
+	<li>Used <b>Puppeteer</b> and <b>CSS</b> print styles to generate e-books from the course contents.</li>
+    <li>Created a reproducible <b>Bazel</b> build system and reduced the build times from 15+ minutes to about 3 minutes, a 3&ndash;4 times average speedup.</li>
 </ul>
 </article>
 <section class='compressed'>
@@ -59,7 +61,7 @@ styles:
         <address><a href="https://season.kde.org"><i class="ri-links-fill"></i>season.kde.org</a></address>
     </div>
     <p class='summary'>
-        Modernized the 15+ year-old <b>C++</b> <b>Qt</b> code-base of JuK. Report:
+        Modernized the 15+ year-old <b>C++</b> <b>Qt</b> code-base of JuK under the supervision of an experienced KDE software developer. Report:
         <a href="https://community.kde.org/SoK/2020/StatusReport/Abogical">community.kde.org/<wbr>SoK/<wbr>2020/<wbr>StatusReport/<wbr>Abogical</a>
     </p>
     </article>
@@ -73,7 +75,7 @@ styles:
         <address><a href="https://codein.withgoogle.com/"><i class="ri-links-fill"></i>codein.withgoogle.com</a></address>
     </div>
     <p class='summary'>
-        Added several <b>Linux</b> programs as packages to HaikuOS.
+        Added several <b>Linux</b> programs as packages to HaikuOS as HaikuPorts.
     </p>
     </article>
 </section>
@@ -88,7 +90,7 @@ styles:
         <address><a href="https://www.npmjs.com/package/posthtml-sri"><i class="ri-links-fill"></i>npmjs.com/posthtml-sri</a></address>
     </div>
     <p class='summary'>
-        PostHTML plugin converting sites to use subresource integrity to improve website security. Submitted as an NPM package.</a>
+        PostHTML plugin adding subresource integrity to websites using CDN assets. It improves website security by protecting against a CDN attack. Submitted as an NPM package.</a>
     </p>
     </article>
     <article>
@@ -100,7 +102,7 @@ styles:
         <address><a href="https://abogic.al/symconstraints/"><i class="ri-links-fill"></i>abogic.al/symconstraints</a></address>
     </div>
     <p class='summary'>
-        Validates and imputes datasets using SymPy mathematical expressions.</a>
+        Validates and imputes datasets using SymPy mathematical expressions. Includes integration with Pandas dataframes to aid in data cleaning operations. Submitted as a PyPI package.
     </p>
     </article>
 </section>
