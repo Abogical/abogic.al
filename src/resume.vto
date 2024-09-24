@@ -8,41 +8,35 @@ styles:
     - assets/resume.css
 ---
 <div id='print-button-container'>
-	<p><a class='button' href='/resume.pdf'><i class='ri-printer-fill'></i>PDF version</a></p>
+    <p><a class='button' href='/resume.pdf'><i class='ri-printer-fill'></i>PDF version</a></p>
 </div>
 <main>
 {{ include 'layouts/letterhead.vto' }}
 <h2><i class="ri-briefcase-4-fill"></i> Work Experience</h2>
 <article>
-<div class='time'>
-    <p><time datetime="2023-9">9</time><wbr>-<wbr><time datetime="2023-12">12/2023</time></p>
-    <p><time>(4 months)</time></p>
-</div>
 <div class='role'>
     <div>
         <h4>Machine Learning Developer</h4>
         <p><i class="ri-building-4-fill"></i> DeepSense</p>
-        <p><i class="ri-map-pin-fill"></i> Halifax, NS, Canada</p>
+        <p><i class="ri-calendar-event-fill"></i> <time datetime="2023-9">Sep 2023</time>&ndash;<time datetime="2023-12">Dec 2023</time></p>
     </div>
     <address>
+        <p><i class="ri-map-pin-fill"></i> Halifax, NS, Canada</p>
         <a href="https://deepsense.ca"><i class="ri-links-fill"></i>deepsense.ca</a>
     </address>
 </div>
 <ul class="text-body summary">
     <li>Developed a regression model to estimate ship stability, improving ship safety.</li>
     <li>Utilized <b>Python</b> and <b>Pandas</b> for preprocessing and employed <b>scikit-learn</b> for learning tasks on an AWS SageMaker Notebook.</li>
-    <li>Achieved an accuracy of 85-99%.</li>
+    <li>Achieved an accuracy of 85&ndash;99%.</li>
 </ul>
 </article>
 <article>
-<div class='time'>
-    <p><time datetime="2021-8">8/2021</time><wbr>-<wbr><time datetime="2022-12">12/2022</time></p>
-    <p><time>(1 year and 5 months)</time></p>
-</div>
 <div class='role'>
     <div>
         <h4>Software Developer</h4>
         <p><i class="ri-building-4-fill"></i> LearnK8s</p>
+        <p><i class="ri-calendar-event-fill"></i> <time datetime="2021-8">Aug 2021</time>&ndash;<time datetime="2022-12">Dec 2022</time></p>
     </div>
     <address>
         <a href="learnk8s.io"><i class="ri-links-fill"></i>learnk8s.io</a>
@@ -51,61 +45,62 @@ styles:
 <ul class='text-body summary'>
     <li>Developed interactive content for a Kubernetes educational platform.</li>
     <li>Created user interfaces via <b>React</b>, <b>TypeScript</b> backed by a <b>NodeJS</b> and <b>Express</b> backend.</li>
-    <li>Created a reproducible <b>Bazel</b> build system and reduced the build times by 3-4 times.</li>
+    <li>Created a reproducible <b>Bazel</b> build system and reduced the build times by 3&ndash;4 times.</li>
 </ul>
 </article>
 <section class='compressed'>
     <h3>Open Source</h3>
     <article>
-    <div class='time'>
-        <p><time datetime="2020-01">1</time><wbr>-<wbr><time datetime="2020-02">2</time>/2020</p>
-    </div>
     <div class='role'>
-        <div><h4>Season of KDE</h4></div>
+        <div>
+            <h4>Season of KDE</h4>
+            <p><i class="ri-calendar-event-fill"></i> <time datetime="2020-01">Jan 2020</time>&ndash;<time datetime="2020-02">Feb 2020</time></p>
+        </div>
         <address><a href="https://season.kde.org"><i class="ri-links-fill"></i>season.kde.org</a></address>
     </div>
     <p class='summary'>
-        Modernized a 15+ year-old <b>C++</b> <b>Qt</b> code-base of JuK. Report:
+        Modernized the 15+ year-old <b>C++</b> <b>Qt</b> code-base of JuK. Report:
         <a href="https://community.kde.org/SoK/2020/StatusReport/Abogical">community.kde.org/<wbr>SoK/<wbr>2020/<wbr>StatusReport/<wbr>Abogical</a>
     </p>
     </article>
     <article>
-    <div class='time'>
-        <p><time datetime="2015-12">12/2015</time><wbr>-<wbr><time datetime="2016-01">1/2016</time></p>
-    </div>
     <div class='role'>
-        <div><h4>Google Code-In</h4></div>
+        <div>
+            <h4>Google Code-In</h4>
+            <p><i class="ri-calendar-event-fill"></i> <time datetime="2020-01">Dec 2015</time>&ndash;<time datetime="2020-02">Jan 2016</time></p>
+            <p><i class="ri-article-fill"></i> Certificate: <a href="https://abogic.al/codein.pdf">abogic.al/codein.pdf</a></p>
+        </div>
         <address><a href="https://codein.withgoogle.com/"><i class="ri-links-fill"></i>codein.withgoogle.com</a></address>
     </div>
     <p class='summary'>
-        Packaged <b>Linux</b> programs to add more software for HaikuOS. Certificate: <a href="https://abogic.al/codein.pdf">abogic.al/codein.pdf</a>
+        Added several <b>Linux</b> programs as packages to HaikuOS.
     </p>
     </article>
 </section>
 <section class='compressed'>
 <h3>Projects</h3>
     <article>
-    <div class='time'>
-        <p><time datetime="2020-10">10/2020</time><wbr>-<wbr>Present</p>
-    </div>
     <div class='role'>
-        <div><h4>posthtml-sri</h4></div>
+        <div>
+            <h4>posthtml-sri</h4>
+            <p><i class="ri-calendar-event-fill"></i> <time datetime="2020-10">Oct 2020</time>&ndash;Present</p>
+        </div>
         <address><a href="https://www.npmjs.com/package/posthtml-sri"><i class="ri-links-fill"></i>npmjs.com/posthtml-sri</a></address>
     </div>
     <p class='summary'>
         PostHTML plugin converting sites to use subresource integrity to improve website security. Submitted as an NPM package.</a>
     </p>
     </article>
-	<article>
-    <div class='time'>
-        <p><time datetime="2020-10">8/2024</time><wbr>-<wbr>Present</p>
-    </div>
+    <article>
     <div class='role'>
-        <div><h4>Symbolic Constraints</h4></div>
+        <div>
+            <h4>Symbolic Constraints</h4>
+            <p><i class="ri-calendar-event-fill"></i> <time datetime="2024-08">Aug 2024</time>&ndash;Present</p>
+        </div>
         <address><a href="https://abogic.al/symconstraints/"><i class="ri-links-fill"></i>abogic.al/symconstraints</a></address>
     </div>
     <p class='summary'>
-        Validates and imputes datasets using <a href="https://www.sympy.org/">SymPy</a> mathematical expressions.</a>
+        Validates and imputes datasets using SymPy mathematical expressions.</a>
     </p>
     </article>
 </section>
@@ -113,55 +108,49 @@ styles:
 <section class='compressed'>
     <h3>Universities</h3>
     <article>
-        <div class='time'>
-            <p><time datetime="2023-01">1/2023</time><wbr>-<wbr><time datetime="2024-05">5/2024</time></p>
-        </div>
         <div class='role'>
             <div>
                 <h4>Master, Computer Science <span class='no-break'>(Co-op)</span></h4>
                 <p><i class="ri-school-fill"></i> Memorial University of Newfoundland</p>
-                <p><i class="ri-map-pin-fill"></i> St. John's, NL, Canada</p>
-				<p><i class="ri-article-fill"></i> Project Paper: <a href="https://abogic.al/msc-proj.pdf">abogic.al/msc-proj.pdf</a></p>
+                <p><i class="ri-calendar-event-fill"></i> <time datetime="2023-01">Jan 2023</time>&ndash;<time datetime="2024-05">May 2024</time></p>
+                <p><i class="ri-article-fill"></i> Project Paper: <a href="https://abogic.al/msc-proj.pdf">abogic.al/msc-proj.pdf</a></p>
             </div>
             <address>
+                <p><i class="ri-map-pin-fill"></i> St. John's, NL, Canada</p>
                 <a href="https://mun.ca"><i class="ri-links-fill"></i>mun.ca</a>
             </address>
         </div>
     </article>
     <article>
-        <div class='time'>
-            <p><time datetime="2016">9/2016</time><wbr>-<wbr><time datetime="2021">7/2021</time></p>
-        </div>
         <div class='role'>
             <div>
                 <h4>Bachelor, Computer and Communication Engineering</h4>
                 <p><i class="ri-school-fill"></i> Alexandria University</p>
-                <p><i class="ri-map-pin-fill"></i> Alexandria, Egypt</p>
+                <p><i class="ri-calendar-event-fill"></i> <time datetime="2016-9">Sep 2016</time>&ndash;<time datetime="2021">Jul 2021</time></p>
             </div>
+            <address>
+                <p><i class="ri-map-pin-fill"></i> Alexandria, Egypt</p>
+            </address>
         </div>
     </article>
 </section>
 <section class='compressed'>
     <h3>Courses</h3>
     <article>
-        <div class='time'>
-            <p><time datetime="2023-01">7</time><wbr>-<wbr><time datetime="2024-04">10/2020</time></p>
-        </div>
         <div class='role'>
             <div>
                 <h4>Advanced Data Analysis</h4>
                 <p><i class="ri-school-fill"></i> Udacity</p>
+                <p><i class="ri-calendar-event-fill"></i> <time datetime="2020-7">Jul 2020</time>&ndash;<time datetime="2020-10">Oct 2020</time></p>
             </div>
         </div>
     </article>
     <article>
-        <div class='time'>
-            <p><time datetime="2023-01">6</time><wbr>-<wbr><time datetime="2024-04">8/2018</time></p>
-        </div>
         <div class='role'>
             <div>
                 <h4>Machine Learning</h4>
                 <p><i class="ri-school-fill"></i> Coursera</p>
+                <p><i class="ri-calendar-event-fill"></i> <time datetime="2018-06">Jun 2018</time>&ndash;<time datetime="2018-8">Aug 2018</time></p>
             </div>
         </div>
     </article>
