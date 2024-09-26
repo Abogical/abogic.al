@@ -12,3 +12,7 @@
 [[redirects]]
   from = "/symconstraints"
   to = "https://abogical.github.io/symconstraints/"
+
+[[redirects]]
+  from = "/sok-report"
+  to = "https://community.kde.org/SoK/2020/StatusReport/Abogical"
