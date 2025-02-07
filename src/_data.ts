@@ -4,7 +4,7 @@ const author = {
 		"<span class='no-break'>Abdel-Rahman</span> <span class='no-break'>Abdel-Rahman</span>",
 	'role': Deno.env.get('AUTHOR_ROLE') || 'Software Developer',
 	'email': Deno.env.get('AUTHOR_EMAIL') || 'abogical@gmail.com',
-	'location': Deno.env.get('AUTHOR_LOCATION') || 'Calgary, AB, Canada',
+	'location': Deno.env.get('AUTHOR_LOCATION') || 'Berlin, Germany',
 	'phone': Deno.env.get('AUTHOR_PHONE'),
 };
 
