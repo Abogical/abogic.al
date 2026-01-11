@@ -17,10 +17,9 @@ create-pages:
       libstdc++6 libudev1 libuuid1 libx11-6 libx11-xcb1 libxcb-dri3-0 libxcb1
       libxcomposite1 libxcursor1 libxdamage1 libxext6 libxfixes3 libxi6
       libxkbcommon0 libxrandr2 libxrender1 libxshmfence1 libxss1 libxtst6 git
-    - su deno
-    - deno run -A npm:puppeteer browsers install chrome
+    - su deno -c "deno run -A npm:puppeteer browsers install chrome"
   script:
-    - deno task build
+    - su deno -c "deno task build"
 create-pages-test:
   # To test gitlab CI in a different branch
   rules:
@@ -34,6 +33,10 @@ create-pages-test:
       libstdc++6 libudev1 libuuid1 libx11-6 libx11-xcb1 libxcb-dri3-0 libxcb1
       libxcomposite1 libxcursor1 libxdamage1 libxext6 libxfixes3 libxi6
       libxkbcommon0 libxrandr2 libxrender1 libxshmfence1 libxss1 libxtst6 git
+    - mkdir /home/deno
+    - chown deno /home/deno
+    - su - deno
+    - whoami
     - deno run -A npm:puppeteer browsers install chrome
   script:
     - deno task build
