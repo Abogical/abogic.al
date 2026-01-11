@@ -2,3 +2,4 @@ _site/
 node_modules/
 src/_cache
 .lazyimages.json
+_cache
