@@ -6,6 +6,7 @@ metas:
     image: /img/me.jpg
 templateEngine: [vto, md]
 image: /img/me.jpg
+date: 2025-04-25
 ---
 
 {{ metas.author }} is a creator of websites & desktop apps. Burning the candles
