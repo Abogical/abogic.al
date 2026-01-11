@@ -1,6 +1,6 @@
 [build]
   publish = "_site"
-  command = "deno run -A npm:puppeteer browsers install chrome && deno task build"
+  command = "deno upgrade && deno run -A npm:puppeteer browsers install chrome && deno task build"
 
 [[headers]]
   for = "/*"
