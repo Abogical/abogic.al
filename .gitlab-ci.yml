@@ -1,0 +1,22 @@
+# The Docker image that will be used to build your app
+image: denoland/deno:latest
+create-pages:
+  pages:
+    # The folder that contains the files to be exposed at the Page URL
+    publish: _site
+  rules:
+    # This ensures that only pushes to the default branch will trigger
+    # a pages deploy
+    - if: $CI_COMMIT_REF_NAME == $CI_DEFAULT_BRANCH
+  # Functions that should be executed before the build script is run
+  before_script:
+    - apt-get update && export DEBIAN_FRONTEND=noninteractive \  && apt-get
+      install -y libasound2 libatk-bridge2.0-0 libatk1.0-0 libatspi2.0-0
+      \  libc6 libcairo2 libcups2 libdbus-1-3 libdrm2 libexpat1 libgbm1
+      libglib2.0-0 \  libnspr4 libnss3 libpango-1.0-0 libpangocairo-1.0-0
+      libstdc++6 libudev1 libuuid1 libx11-6 \  libx11-xcb1 libxcb-dri3-0 libxcb1
+      libxcomposite1 libxcursor1 libxdamage1 libxext6 libxfixes3 \  libxi6
+      libxkbcommon0 libxrandr2 libxrender1 libxshmfence1 libxss1 libxtst6
+    - deno run -A npm:puppeteer browsers install chrome
+  script:
+    - deno task build
