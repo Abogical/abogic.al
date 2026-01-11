@@ -58,6 +58,7 @@ site.use(postcss({
 site.use(sourceMaps());
 
 site.copy('external');
+site.copy('_redirects');
 site.copy(['.pdf'])
 
 site.filter('isoDate', date => formatISO(date, {representation: 'date'}));
