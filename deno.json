@@ -1,6 +1,6 @@
 {
 	"imports": {
-		"lume/": "https://deno.land/x/lume@v2.1.3/"
+		"lume/": "https://deno.land/x/lume@v2.5.3/"
 	},
 	"tasks": {
 		"lume": "echo \"import 'lume/cli.ts'\" | deno run -A -",
@@ -8,9 +8,7 @@
 		"serve": "deno task lume -s"
 	},
 	"compilerOptions": {
-		"types": [
-			"lume/types.ts"
-		]
+		"types": ["lume/types.ts"]
 	},
 	"fmt": {
 		"useTabs": true,

@@ -1,0 +1,4 @@
+{
+    "build": { "dockerfile": "Dockerfile" },
+    "postCreateCommand": "deno run -A npm:puppeteer browsers install chrome"
+}
