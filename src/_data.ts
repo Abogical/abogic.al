@@ -1,9 +1,9 @@
 const author = {
-	'name': 'Abdel-Rahman Abdel-Rahman',
+	'name': 'Abdelrahman Abdelrahman',
 	'htmlName':
-		"<span class='no-break'>Abdel-Rahman</span> <span class='no-break'>Abdel-Rahman</span>",
-	'role': Deno.env.get('AUTHOR_ROLE') || 'Software Developer',
-	'email': Deno.env.get('AUTHOR_EMAIL') || 'abogical@gmail.com',
+		"<span class='no-break'>Abdelrahman</span> <span class='no-break'>Abdelrahman</span>",
+	'role': Deno.env.get('AUTHOR_ROLE') || 'Software Engineer',
+	'email': Deno.env.get('AUTHOR_EMAIL') || 'me@abogic.al',
 	'location': Deno.env.get('AUTHOR_LOCATION') || 'Berlin, Germany',
 	'phone': Deno.env.get('AUTHOR_PHONE'),
 };

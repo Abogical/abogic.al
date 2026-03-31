@@ -9,8 +9,9 @@ image: /img/me.jpg
 date: 2025-04-25
 ---
 
-{{ metas.author }} is a creator of websites & desktop apps. Burning the candles
-at both the front and the back-end. The laundry list of his skills has been
+{{ metas.author }} is a software developer for [AWS CDK](https://github.com/aws/aws-cdk).
+
+Burning the candles at both the front and the back-end. The laundry list of his skills has been
 collected under this [resume](/resume). Currently residing in {{ author.location
 }}.
 
